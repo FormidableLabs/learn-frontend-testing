@@ -19,16 +19,30 @@
   font-size: 0.9em;
 }
 .reveal h1 {
+  font-size: 4.0em;
+}
+.reveal h2 {
   font-size: 3.0em;
 }
 .reveal h2.tip {
   color: #6cf;
 }
+.reveal h3 {
+  font-size: 2.25em;
+}
+.reveal #title h3 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
 .reveal ul li {
   padding-top: 0.3em;
   padding-bottom: 0.3em;
 }
-
+.reveal p {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 20px
+}
 .reveal code {
   font-size: 1.25em;
 }
