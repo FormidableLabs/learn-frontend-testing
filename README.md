@@ -30,3 +30,10 @@ Released under the MIT License.
 License.
 
 [reveal]: http://lab.hakim.se/reveal-js
+
+
+Tasks
+=====
+* Search on all TODO information (urls, etc.).
+* Remove this section.
+

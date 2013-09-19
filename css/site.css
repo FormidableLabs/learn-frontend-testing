@@ -41,7 +41,10 @@
 }
 .reveal section div img.logo-white {
   background: #fff;
-  border: 3px solid #ccc;
+  border: 15px solid #fff;
+  -webkit-border-radius: 15px;
+     -moz-border-radius: 15px;
+      border-top-radius: 15px;
 }
 .reveal section div.last {
   display: none;
