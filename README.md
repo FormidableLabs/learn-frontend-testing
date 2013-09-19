@@ -1,0 +1,32 @@
+SeattleJS - Learn Frontend Testing
+==================================
+
+Talk presentation and demo materials for my 10/16/2013 [SeattleJS][seattlejs]
+talk, "[Learn Frontend Testing][meetup]".
+
+[seattlejs]: http://www.meetup.com/seattlejs/
+[meetup]: http://www.meetup.com/seattlejs/events/139993642/
+
+
+Building the Slide Deck
+=======================
+
+To re-build this slide deck from Jade sources:
+
+    $ npm install
+    $ grunt jade
+
+To watch changes:
+
+    $ grunt watch
+
+
+Licenses
+========
+All code not otherwise specified is Copyright 2013 Ryan Roemer.
+Released under the MIT License.
+
+[reveal.js][reveal] is Copyright Hakim El Hattab and released under the MIT
+License.
+
+[reveal]: http://lab.hakim.se/reveal-js

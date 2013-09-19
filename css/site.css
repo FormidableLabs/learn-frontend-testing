@@ -1,0 +1,103 @@
+/* Page */
+.reveal {
+  font-size: 2.5em;
+}
+@media print {
+  .reveal {
+    font-size: 2.0em;
+  }
+}
+
+/* Elements */
+.reveal blockquote:before,
+.reveal blockquote:after {
+  content: "" !important;
+  quotes: default;
+}
+.reveal blockquote p {
+  text-align: left;
+  font-size: 0.9em;
+}
+.reveal h1 {
+  font-size: 3.0em;
+}
+.reveal h2.tip {
+  color: #6cf;
+}
+.reveal ul li {
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+}
+
+.reveal code {
+  font-size: 1.25em;
+}
+.reveal strong {
+  color: #7ad;
+}
+
+.reveal section div a.image {
+  color: #ccc;
+}
+.reveal section div img.logo-white {
+  background: #fff;
+  border: 3px solid #ccc;
+}
+.reveal section div.last {
+  display: none;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 10px;
+  height: 10px;
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+      border-top-radius: 10px;
+  background-color: #e7ad52;
+}
+
+.reveal table {
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  border-spacing: 10px;
+}
+.reveal table th,
+.reveal table td {
+  padding: 6px;
+}
+.reveal table th {
+  background: #e7ad52;
+  color: #000;
+  text-shadow: none;
+  font-weight: bold;
+}
+.reveal table th {
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+      border-top-radius: 10px;
+}
+
+/* Reveal.js Overrides */
+.reveal .roll {
+  -webkit-perspective: none;
+     -moz-perspective: none;
+      -ms-perspective: none;
+          perspective: none;
+}
+
+/* Custom */
+.image-left {
+  float: left;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid yellow;
+  width: 50%;
+}
+
+.image-right {
+  float: right;
+  text-align: center;
+  vertical-align: middle;
+  width: 50%;
+}
