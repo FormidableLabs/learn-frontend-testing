@@ -41,7 +41,8 @@
   padding-top: 0.3em;
   padding-bottom: 0.3em;
 }
-.reveal p {
+.reveal p,
+.reveal code.p {
   margin-left: 10%;
   margin-right: 10%;
   margin-top: 20px
