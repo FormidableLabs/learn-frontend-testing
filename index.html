@@ -47,8 +47,7 @@ encouraged and don&#39;t let us stop any good conversations.</p>
       </section>
       <section><h2>Motivation</h2>
 
-<ul><li>TODO HERE</li><li>Backend testing is very familiar and relatively straightforward.</li><li>Frontend testing is difficult and error-prone<ul><li>Browser idiosyncracies
-*</li></ul></li></ul>
+<ul><li>TODO HERE</li><li>Backend testing is very familiar and relatively straightforward.</li><li>Frontend testing is difficult and error-prone<ul><li>Browser idiosyncracies</li></ul></li></ul>
       </section>
       <section><h2>Overview</h2>
 
@@ -56,7 +55,14 @@ encouraged and don&#39;t let us stop any good conversations.</p>
       </section>
       <section><h2>A basic test page</h2>
 
-<ul><li>A</li><li>Installation</li></ul>
+<ul><li>Installation</li></ul>
+
+<p><code>
+var foo = &quot;bar&quot;;
+var obj = {
+  hi: &quot;there&quot;;
+}
+</code></p>
       </section>
       <section>
         <h1>Thanks!</h1>
@@ -72,24 +78,55 @@ encouraged and don&#39;t let us stop any good conversations.</p>
   <script src="lib/js/head.min.js"></script>
   <script src="js/reveal.min.js"></script>
   <script>
-    // Full list of configuration options available here:
-    // https://github.com/hakimel/reveal.js#configuration
-    Reveal.initialize({
-      controls: true,
-      progress: true,
-      history: true,
-      center: true,
-      theme: "default", // available themes are in /css/theme
-      transition: "linear", // default/cube/page/concave/zoom/linear/fade/none -- Reveal.getQueryHash().transition || 'default'
-      // Optional libraries used to extend on reveal.js
-      dependencies: [
-        { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-        { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-        { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-        { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-        // { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
-        // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
-      ]
-    });
+    (function (root) {
+      var _toArray = function (obj) {
+        return Array.prototype.slice.call(obj);
+      };
+      
+      // Highlight source code.
+      var _highlight = function () {
+        // Iterate codes and mutate for highlighting.
+        var codes = document.querySelectorAll("code");
+        _toArray(codes).forEach(function (code) {
+          var parent = code.parentNode;
+          
+          // Skip existing <pre>-wrapped code items.
+          if (parent.nodeName.toLowerCase() === "pre") {
+            return;
+          }
+          
+          // Strip forward whitespace.
+          code.innerHTML = code.innerHTML.replace(/^\s+/, "");
+          
+          // Wrap in <pre> tag.
+          parent.innerHTML = "<pre>" + code.outerHTML + "</pre>";
+        });
+        
+        // Initialize plugin.
+        hljs.initHighlightingOnLoad();
+      };
+      
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        theme: "default", // available themes are in /css/theme
+        transition: "linear", // default/cube/page/concave/zoom/linear/fade/none -- Reveal.getQueryHash().transition || 'default'
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function () { return !document.body.classList; } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: _highlight },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function () { return !!document.body.classList; } },
+          { src: 'plugin/notes/notes.js', async: true, condition: function () { return !!document.body.classList; } }
+          // { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+          // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+    }).call(this);
+    
+    
   </script>
 </body>

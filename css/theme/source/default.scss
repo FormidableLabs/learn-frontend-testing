@@ -11,15 +11,14 @@
 // ---------------------------------------------
 
 
-
 // Include theme-specific fonts
 @font-face {
 	font-family: 'League Gothic';
 	src: url('../../lib/font/league_gothic-webfont.eot');
 	src: url('../../lib/font/league_gothic-webfont.eot?#iefix') format('embedded-opentype'),
-		 url('../../lib/font/league_gothic-webfont.woff') format('woff'),
-		 url('../../lib/font/league_gothic-webfont.ttf') format('truetype'),
-		 url('../../lib/font/league_gothic-webfont.svg#LeagueGothicRegular') format('svg');
+		url('../../lib/font/league_gothic-webfont.woff') format('woff'),
+		url('../../lib/font/league_gothic-webfont.ttf') format('truetype'),
+		url('../../lib/font/league_gothic-webfont.svg#LeagueGothicRegular') format('svg');
 
 	font-weight: normal;
 	font-style: normal;
@@ -34,7 +33,6 @@ $heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b
 @mixin bodyBackground() {
 	@include radial-gradient( rgba(28,30,32,1), rgba(85,90,95,1) );
 }
-
 
 
 // Theme template ------------------------------

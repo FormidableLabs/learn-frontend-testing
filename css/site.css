@@ -34,6 +34,9 @@
   padding-top: 20px;
   padding-bottom: 20px;
 }
+.reveal ul {
+  text-align: left;
+}
 .reveal ul li {
   padding-top: 0.3em;
   padding-bottom: 0.3em;
