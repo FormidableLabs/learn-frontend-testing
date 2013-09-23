@@ -38,8 +38,10 @@ head
         var _highlight = function () {
           // Iterate codes and mutate for highlighting.
           var codes = document.querySelectorAll("code");
+
           _toArray(codes).forEach(function (code) {
-            var parent = code.parentNode;
+            var parent = code.parentNode,
+              grand = parent.parentNode;
 
             // Skip existing <pre>-wrapped code items.
             if (parent.nodeName.toLowerCase() === "pre") {
@@ -51,6 +53,11 @@ head
 
             // Wrap in <pre> tag.
             parent.innerHTML = "<pre>" + code.outerHTML + "</pre>";
+
+            // Add wrapping <p>.
+            if (grand.nodeName.toLowerCase() !== "p") {
+              parent.innerHTML = "<p>" + parent.innerHTML + "</p>";
+            }
           });
 
           // Initialize plugin.
