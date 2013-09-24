@@ -41,16 +41,23 @@ head
 
           _toArray(codes).forEach(function (code) {
             var parent = code.parentNode,
-              grand = parent.parentNode;
+              grand = parent.parentNode,
+              match;
 
-            // Strip initial whitespace.
+            // Strip initial empty line.
             code.innerHTML = code.innerHTML.replace(/^\s*\n/m, "");
 
-            // Strip forward whitespace.
-            code.innerHTML = code.innerHTML.replace(/^(\s)+/g, function () {
-              console.log("TODO HERE",  arguments);
-              return "";
-            });
+            // Find indent, if any.
+            match = /^(\s+)/.exec(code.innerHTML);
+            if (match) {
+              // Strip forward whitespace in first section.
+              code.innerHTML = code.innerHTML.substr(match[0].length)
+
+              // Strip in remaining parts.
+              code.innerHTML = code.innerHTML
+                .split("\n" + match[0])
+                .join("\n")
+            }
 
             // Skip existing <pre>-wrapped code items.
             if (parent.nodeName.toLowerCase() === "pre") {
