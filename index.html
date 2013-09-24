@@ -66,6 +66,10 @@ means braving the browser.</p>
         </section>
       </section>
       <section>
+        <section><h2>Overview</h2>
+
+<ul><li>Some code to work with</li><li>Installation and test page</li><li>Suites</li><li>Assertions</li><li>Fakes</li></ul>
+        </section>
         <section><h2>We will learn how to</h2>
 
 <ul><li>Hook frontend JS to tests</li><li>Write assertions against behavior</li><li>Fake application behavior</li><li>Run and verify the tests</li></ul>
@@ -74,10 +78,6 @@ means braving the browser.</p>
 
 <ul><li>TDD / BDD</li><li>Application development</li><li>Functional testing</li><li>Performance testing</li></ul>
         </section>
-        <section><h2>Overview</h2>
-
-<ul><li>Some code to work with</li><li>Installation and test page</li><li>Suites</li><li>Assertions</li><li>Fakes</li></ul>
-        </section>
       </section>
       <section>
         <section><h2>Coding time</h2>
@@ -85,6 +85,22 @@ means braving the browser.</p>
 <p>We&#39;re going to write two simple functions that we&#39;ll test</p>
 
 <ul><li>Title Case</li><li>Camel Case</li></ul>
+        </section>
+        <section><h2>Create a project</h2>
+
+<p>Let&#39;s create structure for our JS files.</p>
+          <pre><code class="text no-highlight">
+              # You project directory (e.g., "test/")
+              $ cd PATH/TO/PROJECT
+              
+              # Create the directories
+              $ mkdir js
+              $ mkdir js/app
+              
+              # Create empty files
+              $ touch js/app/title-case.js
+              $ touch js/app/camel-case.js
+              </code></pre>
         </section>
         <section>
           <h2>Title Case</h2><a href="test/js/app/title-case.js">test/js/app/title-case.js</a>
@@ -110,6 +126,9 @@ var camelCase = function (val) {
 };
 </code></pre>
         </section>
+        <section>
+          <h2>Camel Case Demo</h2><a href="test/index.html">test/index.html</a>
+        </section>
       </section>
       <section>
         <section>
@@ -128,7 +147,6 @@ var camelCase = function (val) {
                   title-case.js
                   ...
                 lib/
-                  jquery.js
                   mocha.js
                   ...
                 spec/
