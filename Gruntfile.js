@@ -88,7 +88,10 @@ module.exports = function(grunt) {
 
     watch: {
       jade: {
-        files: [ "*.jade" ],
+        files: [
+          "*.jade",
+          "test/**"
+        ],
         tasks: "jade"
       }
       // main: {

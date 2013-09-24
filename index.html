@@ -41,41 +41,120 @@
       <section><h2>Mentors</h2>
 
 <p>Try to keep pace with the presentation, but side conversations are
-encouraged and don&#39;t let us stop any good conversations.</p>
+encouraged and don&#39;t let us stop any good directions.</p>
 
 <p>And, <strong>thanks</strong>!</p>
       </section>
-      <section><h2>Motivation</h2>
+      <section>
+        <section><h2>Motivation</h2>
 
-<ul><li>TODO HERE</li><li>Backend testing is very familiar and relatively straightforward.</li><li>Frontend testing is difficult and error-prone<ul><li>Browser idiosyncracies</li></ul></li></ul>
+<p>Web applications are increasingly becoming <strong>frontend heavy</strong>.</p>
+
+<p>We need to <strong>verify</strong> app logic and behavior, and that
+means braving the browser.</p>
+        </section>
+        <section><h2>So let&#39;s test</h2>
+
+<p><strong>Backend</strong> is straightforward and easy</p>
+
+<p>... but what about the frontend?</p>
+        </section>
+        <section><h2>Frontend testing</h2>
+
+<p><strong>Frontend</strong> testing is difficult and error-prone.</p>
+
+<ul><li>Asynchronous events, timing</li><li>Browser idiosyncracies</li><li>State of testing technologies</li></ul>
+        </section>
+        <section><p>... so let&#39;s get started with a modern frontend test stack.</p>
+        </section>
       </section>
-      <section><h2>Overview</h2>
+      <section>
+        <section><h2>We will learn how to</h2>
 
-<ul><li>A basic test page</li><li>Suites</li><li>Assertions</li><li>Fakes</li><li>Automation</li></ul>
+<ul><li>Hook frontend JS to tests</li><li>Write assertions against behavior</li><li>Fake application behavior</li><li>Run and verify the tests</li></ul>
+        </section>
+        <section><h2>Things we&#39;re <strong>not</strong> going to cover</h2>
+
+<ul><li>TDD / BDD</li><li>Application development</li><li>Functional testing</li><li>Performance testing</li></ul>
+        </section>
+        <section><h2>Overview</h2>
+
+<ul><li>Some code to work with</li><li>Installation and test page</li><li>Suites</li><li>Assertions</li><li>Fakes</li></ul>
+        </section>
       </section>
-      <section><h2>TODO CODE EXAMPLE</h2>
+      <section>
+        <section><h2>Coding time</h2>
 
-<ul><li>Installation</li></ul>
+<p>We&#39;re going to write two simple functions that we&#39;ll test</p>
 
-<p><code>
-var foo = &quot;bar&quot;;
-var obj = {
-  hi: &quot;there&quot;;
-}
-</code></p>
+<ul><li>Title Case</li><li>Camel Case</li></ul>
+        </section>
+        <section>
+          <h2>Title Case</h2><a href="test/js/app/title-case.js">test/js/app/title-case.js</a>
+          <pre><code class="javascript">// Title case a string.
+var titleCase = function (val) {
+  return val.charAt(0).toUpperCase() +
+         val.substr(1);
+};
+</code></pre>
+        </section>
+        <section>
+          <h2>Camel Case</h2><a href="test/js/app/camel-case.js">test/js/app/camel-case.js</a>
+          <pre><code class="javascript">// Camel case a string.
+var camelCase = function (val) {
+  return val
+    .split(/[\-_]/g)
+    .map(function (part, idx) {
+      // Title case parts, skipping first one.
+      if (idx === 0) { return part; }
+      return titleCase(part);
+    })
+    .join("");
+};
+</code></pre>
+        </section>
       </section>
-      <section><h2>TODO CODE INCLUDE</h2>
+      <section>
+        <section>
+          <h2>Our test harness</h2>
+        </section>
+        <section><h2>Test Libraries</h2>
 
-<p><code>
-var code1 = &quot;hi&quot;;
-</code></p>
-        <p><code class="cs">document.createElement('header');
-document.createElement('nav');
-document.createElement('section');
-document.createElement('article');
-document.createElement('aside');
-document.createElement('footer');
-document.createElement('hgroup');</code></p>
+<ul><li><strong><a href="http://visionmedia.github.com/mocha/">Mocha</a></strong>: Framework</li><li><strong><a href="http://chaijs.com/">Chai</a></strong>: Assertions</li><li><strong><a href="http://sinonjs.org/">Sinon.JS</a></strong>: Fakes - spies and stubs.</li></ul>
+        </section>
+        <section><h2>Directory layout</h2>
+
+<p>A combined structure.</p>
+          <pre><code class="text no-highlight">
+              APP/
+                app/
+                  title-case.js
+                  ...
+                lib/
+                  jquery.js
+                  mocha.js
+                  ...
+                spec/
+                  title-case.spec.js
+                  ...
+                test.html
+                index.html
+                </code></pre>
+        </section>
+        <section><h2>The test page</h2>
+
+<p>Our first task is creating a page that will run our tests.</p>
+
+<p><a href="test/js/test.html">test/js/test.html</a></p>
+        </section>
+      </section>
+      <section><h2>What we&#39;ve covered</h2>
+
+<ul><li>Test harness</li><li>Suites</li><li>Assertions</li><li>Fakes</li></ul>
+      </section>
+      <section><h2>Additional Topics</h2>
+
+<ul><li>Automation</li><li>TDD / BDD</li><li>Functional testing</li><li>Performance testing</li></ul>
       </section>
       <section>
         <h1>Thanks!</h1>
@@ -102,16 +181,24 @@ document.createElement('hgroup');</code></p>
       var _highlight = function () {
         // Iterate codes and mutate for highlighting.
         var codes = document.querySelectorAll("code");
+        
         _toArray(codes).forEach(function (code) {
-          var parent = code.parentNode;
+          var parent = code.parentNode,
+            grand = parent.parentNode;
+            
+          // Strip initial whitespace.
+          code.innerHTML = code.innerHTML.replace(/^\s*\n/m, "");
+          
+          // Strip forward whitespace.
+          code.innerHTML = code.innerHTML.replace(/^(\s)+/g, function () {
+            console.log("TODO HERE",  arguments);
+            return "";
+          });
           
           // Skip existing <pre>-wrapped code items.
           if (parent.nodeName.toLowerCase() === "pre") {
             return;
           }
-          
-          // Strip forward whitespace.
-          code.innerHTML = code.innerHTML.replace(/^\s+/, "");
           
           // Wrap in <pre> tag.
           parent.innerHTML = "<pre>" + code.outerHTML + "</pre>";

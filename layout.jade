@@ -43,21 +43,22 @@ head
             var parent = code.parentNode,
               grand = parent.parentNode;
 
+            // Strip initial whitespace.
+            code.innerHTML = code.innerHTML.replace(/^\s*\n/m, "");
+
+            // Strip forward whitespace.
+            code.innerHTML = code.innerHTML.replace(/^(\s)+/g, function () {
+              console.log("TODO HERE",  arguments);
+              return "";
+            });
+
             // Skip existing <pre>-wrapped code items.
             if (parent.nodeName.toLowerCase() === "pre") {
               return;
             }
 
-            // Strip forward whitespace.
-            code.innerHTML = code.innerHTML.replace(/^\s+/, "");
-
             // Wrap in <pre> tag.
             parent.innerHTML = "<pre>" + code.outerHTML + "</pre>";
-
-            // Add wrapping <p>.
-            if (grand.nodeName.toLowerCase() !== "p") {
-              parent.innerHTML = "<p>" + parent.innerHTML + "</p>";
-            }
           });
 
           // Initialize plugin.

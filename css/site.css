@@ -48,7 +48,8 @@
   margin-top: 20px
 }
 .reveal code {
-  font-size: 1.25em;
+  line-height: 1em;
+  font-size: 1.5em;
 }
 .reveal strong {
   color: #7ad;

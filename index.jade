@@ -54,54 +54,156 @@ block slides
       ## Mentors
 
       Try to keep pace with the presentation, but side conversations are
-      encouraged and don't let us stop any good conversations.
+      encouraged and don't let us stop any good directions.
 
       And, **thanks**!
 
   section
-    :markdown
-      ## Motivation
+    section
+      :markdown
+        ## Motivation
 
-      * TODO HERE
-      * Backend testing is very familiar and relatively straightforward.
-      * Frontend testing is difficult and error-prone
+        Web applications are increasingly becoming **frontend heavy**.
+
+        We need to **verify** app logic and behavior, and that
+        means braving the browser.
+
+    section
+      :markdown
+        ## So let's test
+
+        **Backend** is straightforward and easy
+
+        ... but what about the frontend?
+
+    section
+      :markdown
+        ## Frontend testing
+
+        **Frontend** testing is difficult and error-prone.
+
+        * Asynchronous events, timing
         * Browser idiosyncracies
+        * State of testing technologies
+
+    section
+      :markdown
+        ... so let's get started with a modern frontend test stack.
+
+  section
+    section
+      :markdown
+        ## We will learn how to
+
+        * Hook frontend JS to tests
+        * Write assertions against behavior
+        * Fake application behavior
+        * Run and verify the tests
+
+    section
+      :markdown
+        ## Things we're **not** going to cover
+
+        * TDD / BDD
+        * Application development
+        * Functional testing
+        * Performance testing
+
+    section
+      :markdown
+        ## Overview
+
+        * Some code to work with
+        * Installation and test page
+        * Suites
+        * Assertions
+        * Fakes
+
+  section
+    section
+      :markdown
+        ## Coding time
+
+        We're going to write two simple functions that we'll test
+
+        * Title Case
+        * Camel Case
+
+    section
+      h2 Title Case
+      a(href="test/js/app/title-case.js") test/js/app/title-case.js
+      pre
+        code.javascript
+          include test/js/app/title-case.js
+
+    section
+      h2 Camel Case
+      a(href="test/js/app/camel-case.js") test/js/app/camel-case.js
+      pre
+        code.javascript
+          include test/js/app/camel-case.js
+
+  section
+    section
+      h2 Our test harness
+
+    section
+      :markdown
+        ## Test Libraries
+
+        * **[Mocha](http://visionmedia.github.com/mocha/)**: Framework
+        * **[Chai](http://chaijs.com/)**: Assertions
+        * **[Sinon.JS](http://sinonjs.org/)**: Fakes - spies and stubs.
+
+    section
+      :markdown
+        ## Directory layout
+
+        A combined structure.
+
+      pre
+        code.text.no-highlight .
+          APP/
+            app/
+              title-case.js
+              ...
+            lib/
+              jquery.js
+              mocha.js
+              ...
+            spec/
+              title-case.spec.js
+              ...
+            test.html
+            index.html
+
+    section
+      :markdown
+        ## The test page
+
+        Our first task is creating a page that will run our tests.
+
+        [test/js/test.html](test/js/test.html)
+
+
 
   section
     :markdown
-      ## Overview
+      ## What we've covered
 
-      * A basic test page
+      * Test harness
       * Suites
       * Assertions
       * Fakes
+
+  section
+    :markdown
+      ## Additional Topics
+
       * Automation
-
-    //- TODO: Reconsider time each example takes, etc.
-
-  section
-    :markdown
-      ## TODO CODE EXAMPLE
-
-      * Installation
-
-      ```
-      var foo = "bar";
-      var obj = {
-        hi: "there";
-      }
-      ```
-
-  section
-    :markdown
-      ## TODO CODE INCLUDE
-
-      ```
-      var code1 = "hi";
-      ```
-
-    code.cs
-      include lib/js/html5shiv.js
+      * TDD / BDD
+      * Functional testing
+      * Performance testing
 
   section
     h1 Thanks!

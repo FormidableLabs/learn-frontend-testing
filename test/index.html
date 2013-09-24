@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Camel Case</title>
+    <script src="js/app/title-case.js"></script>
+    <script src="js/app/camel-case.js"></script>
+    <script>
+      // Apply camel-casing to form element.
+      var camelize = function () {
+        var input = document.getElementById("source");
+        input.value = camelCase(input.value);
+      };
+    </script>
+  </head>
+  <body>
+    <h2>Camel Case</h2>
+    <p>Type in a string to camel case:</p>
+    <form action="#" onClick="return false;">
+      <input type="text" id="source"></input>
+      <input type="submit" value="Go!" onClick="camelize();"></input>
+    </form>
+  </body>
+</html>
