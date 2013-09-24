@@ -34,9 +34,6 @@
         <section>
           <div><a href="http://redfin.com" class="image"><img alt="Redfin" src="img/sponsors/redfin.png" width="75%" class="logo-white"></a></div>
         </section>
-        <section>
-          <div><a href="https://www.codefellows.org/" class="image"><img alt="Code Fellows" src="img/sponsors/codefellows.png" width="40%" class="logo-white"></a></div>
-        </section>
       </section>
       <section><h2>Mentors</h2>
 
@@ -199,16 +196,13 @@ var camelCase = function (val) {
             // Strip in remaining parts.
             code.innerHTML = code.innerHTML
               .split("\n" + match[0])
-              .join("\n")
+              .join("\n");
           }
           
-          // Skip existing <pre>-wrapped code items.
-          if (parent.nodeName.toLowerCase() === "pre") {
-            return;
+          // Wrap in <pre> tag if not already present.
+          if (parent.nodeName.toLowerCase() !== "pre") {
+            parent.innerHTML = "<pre>" + code.outerHTML + "</pre>";
           }
-          
-          // Wrap in <pre> tag.
-          parent.innerHTML = "<pre>" + code.outerHTML + "</pre>";
         });
         
         // Initialize plugin.

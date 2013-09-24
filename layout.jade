@@ -56,16 +56,13 @@ head
               // Strip in remaining parts.
               code.innerHTML = code.innerHTML
                 .split("\n" + match[0])
-                .join("\n")
+                .join("\n");
             }
 
-            // Skip existing <pre>-wrapped code items.
-            if (parent.nodeName.toLowerCase() === "pre") {
-              return;
+            // Wrap in <pre> tag if not already present.
+            if (parent.nodeName.toLowerCase() !== "pre") {
+              parent.innerHTML = "<pre>" + code.outerHTML + "</pre>";
             }
-
-            // Wrap in <pre> tag.
-            parent.innerHTML = "<pre>" + code.outerHTML + "</pre>";
           });
 
           // Initialize plugin.

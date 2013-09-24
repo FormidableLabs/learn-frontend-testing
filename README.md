@@ -35,7 +35,6 @@ License.
 Tasks
 =====
 * Libs: Upgrade and use bower.
-* Confirm sponsors list.
 * Create a "formidable" theme based on default with red's for links and hovers.
 * Hone down the overrides in site.css.
 * Search on all TODO information (urls, etc.).
