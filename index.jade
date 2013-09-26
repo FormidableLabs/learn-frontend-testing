@@ -41,14 +41,6 @@ block slides
               src="img/sponsors/redfin.png",
               width="75%")
 
-    section
-      div
-        a.image(href="https://www.codefellows.org/")
-          img(class="logo-white",
-              alt="Code Fellows",
-              src="img/sponsors/codefellows.png",
-              width="40%")
-
   section
     :markdown
       ## Mentors
@@ -93,6 +85,16 @@ block slides
   section
     section
       :markdown
+        ## Overview
+
+        * Some code to work with
+        * Installation and test page
+        * Suites
+        * Assertions
+        * Fakes
+
+    section
+      :markdown
         ## We will learn how to
 
         * Hook frontend JS to tests
@@ -109,16 +111,6 @@ block slides
         * Functional testing
         * Performance testing
 
-    section
-      :markdown
-        ## Overview
-
-        * Some code to work with
-        * Installation and test page
-        * Suites
-        * Assertions
-        * Fakes
-
   section
     section
       :markdown
@@ -128,6 +120,25 @@ block slides
 
         * Title Case
         * Camel Case
+
+    section
+      :markdown
+        ## Create a project
+
+        Let's create structure for our JS files.
+
+      pre
+        code.text.no-highlight .
+          # You project directory (e.g., "test/")
+          $ cd PATH/TO/PROJECT
+
+          # Create the directories
+          $ mkdir js
+          $ mkdir js/app
+
+          # Create empty files
+          $ touch js/app/title-case.js
+          $ touch js/app/camel-case.js
 
     section
       h2 Title Case
@@ -142,6 +153,10 @@ block slides
       pre
         code.javascript
           include test/js/app/camel-case.js
+
+    section
+      h2 Camel Case Demo
+      a(href="test/index.html") test/index.html
 
   section
     section
@@ -168,7 +183,6 @@ block slides
               title-case.js
               ...
             lib/
-              jquery.js
               mocha.js
               ...
             spec/
@@ -184,8 +198,6 @@ block slides
         Our first task is creating a page that will run our tests.
 
         [test/js/test.html](test/js/test.html)
-
-
 
   section
     :markdown
