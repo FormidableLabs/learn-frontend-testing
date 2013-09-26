@@ -92,7 +92,13 @@ module.exports = function(grunt) {
           "*.jade",
           "test/**"
         ],
-        tasks: "jade"
+        tasks: [
+          "jade"
+        ],
+        options: {
+          spawn: false,
+          atBegin: true
+        }
       }
       // main: {
       //   files: [ 'Gruntfile.js', 'js/reveal.js', 'css/reveal.css' ],
