@@ -94,28 +94,26 @@ means braving the browser.</p>
       <section>
         <section><h2>Coding time</h2>
 
-<p>We&#39;re going to write two simple functions that we&#39;ll test</p>
+<p>We&#39;re going to test two simple functions:</p>
 
 <ul><li>Title Case</li><li>Camel Case</li></ul>
-        </section>
-        <section><h2>Create a project</h2>
-
-<p>Let&#39;s create structure for our JS files.</p>
           <pre><code class="text no-highlight">
-              # You project directory (e.g., "test/")
-              $ cd PATH/TO/PROJECT
-              
-              # Create the directories
-              $ mkdir js
-              $ mkdir js/app
-              
-              # Create empty files
-              $ touch js/app/title-case.js
-              $ touch js/app/camel-case.js
-              </code></pre>
+              # Copy the skeleton application.
+              $ cp -r skeleton MY_APP_NAME</code></pre>
+        </section>
+        <section><h2>Project Structure</h2>
+
+<p>Start with the &quot;skeleton&quot; application.</p>
+          <pre><code class="text no-highlight">
+              skeleton/
+                js/
+                  app/
+                    title-case.js
+                    camel-case.js
+                camel.html</code></pre>
         </section>
         <section>
-          <h2>Title Case</h2><a href="test/js/app/title-case.js">test/js/app/title-case.js</a>
+          <h2>Title Case</h2><a href="skeleton/js/app/title-case.js">skeleton/js/app/title-case.js</a>
           <pre><code class="javascript">// Title case a string.
 var titleCase = function (val) {
   return val.charAt(0).toUpperCase() +
@@ -124,7 +122,7 @@ var titleCase = function (val) {
 </code></pre>
         </section>
         <section>
-          <h2>Camel Case</h2><a href="test/js/app/camel-case.js">test/js/app/camel-case.js</a>
+          <h2>Camel Case</h2><a href="skeleton/js/app/camel-case.js">skeleton/js/app/camel-case.js</a>
           <pre><code class="javascript">// Camel case a string.
 var camelCase = function (val) {
   return val
@@ -139,7 +137,7 @@ var camelCase = function (val) {
 </code></pre>
         </section>
         <section>
-          <h2>Camel Case Demo</h2><a href="test/camel.html">test/camel.html</a>
+          <h2>Camel Case Demo</h2><a href="skeleton/camel.html">skeleton/camel.html</a>
           <pre><code class="text no-highlight">
               # Create the demo page.
               $ vim camel.html
@@ -159,18 +157,18 @@ var camelCase = function (val) {
 <p>A combined structure.</p>
           <pre><code class="text no-highlight">
               APP/
-                app/
-                  title-case.js
-                  ...
-                lib/
-                  mocha.js
-                  ...
-                spec/
-                  title-case.spec.js
-                  ...
+                js/
+                  app/...
+                  lib/
+                    chai.js
+                    mocha.js
+                    mocha.css
+                    sinon.js
+                  spec/
+                    title-case.spec.js
+                    ...
                 test.html
-                index.html
-                </code></pre>
+                camel.html</code></pre>
         </section>
         <section><h2>The test page</h2>
 

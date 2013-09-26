@@ -134,47 +134,50 @@ block slides
       :markdown
         ## Coding time
 
-        We're going to write two simple functions that we'll test
+        We're going to test two simple functions:
 
         * Title Case
         * Camel Case
 
+      pre
+        code.text.no-highlight .
+          # Copy the skeleton application.
+          $ cp -r skeleton MY_APP_NAME
+      //-
+
     section
       :markdown
-        ## Create a project
+        ## Project Structure
 
-        Let's create structure for our JS files.
+        Start with the "skeleton" application.
 
       pre
         code.text.no-highlight .
-          # You project directory (e.g., "test/")
-          $ cd PATH/TO/PROJECT
-
-          # Create the directories
-          $ mkdir js
-          $ mkdir js/app
-
-          # Create empty files
-          $ touch js/app/title-case.js
-          $ touch js/app/camel-case.js
+          skeleton/
+            js/
+              app/
+                title-case.js
+                camel-case.js
+            camel.html
+      //-
 
     section
       h2 Title Case
-      a(href="test/js/app/title-case.js") test/js/app/title-case.js
+      a(href="skeleton/js/app/title-case.js") skeleton/js/app/title-case.js
       pre
         code.javascript
-          include test/js/app/title-case.js
+          include skeleton/js/app/title-case.js
 
     section
       h2 Camel Case
-      a(href="test/js/app/camel-case.js") test/js/app/camel-case.js
+      a(href="skeleton/js/app/camel-case.js") skeleton/js/app/camel-case.js
       pre
         code.javascript
-          include test/js/app/camel-case.js
+          include skeleton/js/app/camel-case.js
 
     section
       h2 Camel Case Demo
-      a(href="test/camel.html") test/camel.html
+      a(href="skeleton/camel.html") skeleton/camel.html
       pre
         code.text.no-highlight .
           # Create the demo page.
@@ -201,17 +204,19 @@ block slides
       pre
         code.text.no-highlight .
           APP/
-            app/
-              title-case.js
-              ...
-            lib/
-              mocha.js
-              ...
-            spec/
-              title-case.spec.js
-              ...
+            js/
+              app/...
+              lib/
+                chai.js
+                mocha.js
+                mocha.css
+                sinon.js
+              spec/
+                title-case.spec.js
+                ...
             test.html
-            index.html
+            camel.html
+      //-
 
     section
       :markdown
