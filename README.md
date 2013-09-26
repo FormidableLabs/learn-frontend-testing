@@ -34,6 +34,7 @@ License.
 
 Tasks
 =====
+* Add book image, link, etc. (Distinguish BB vs. presentation).
 * Libs: Upgrade and use bower.
 * Confirm sponsors list.
 * Create a "formidable" theme based on default with red's for links and hovers.
