@@ -65,6 +65,18 @@
      -moz-border-radius: 15px;
       border-top-radius: 15px;
 }
+.reveal section div img.book {
+  border: 2px solid #333;
+  max-width: 350px;
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  -webkit-box-shadow: 10px 10px 20px rgba(50, 50, 50, 0.85);
+     -moz-box-shadow: 10px 10px 20px rgba(50, 50, 50, 0.85);
+          box-shadow: 10px 10px 20px rgba(50, 50, 50, 0.85);
+}
 .reveal section div.last {
   display: none;
   position: absolute;
