@@ -134,10 +134,14 @@ block slides
       :markdown
         ## Coding time
 
-        We're going to test two simple functions:
+        We're going to [camel case](http://en.wikipedia.org/wiki/CamelCase)
+        strings!
 
-        * Title Case
-        * Camel Case
+      p "<strong>hi-there</strong>" &#10142; "<strong>hiThere</strong>"
+
+    section
+      :markdown
+        ## Set up your project
 
       pre
         code.text.no-highlight .
@@ -149,24 +153,16 @@ block slides
       :markdown
         ## Project Structure
 
-        Start with the "skeleton" application.
+        Using with the "skeleton" application.
 
       pre
         code.text.no-highlight .
-          skeleton/
+          MY_APP_NAME/
             js/
               app/
-                title-case.js
                 camel-case.js
             camel.html
       //-
-
-    section
-      h2 Title Case
-      a(href="skeleton/js/app/title-case.js") skeleton/js/app/title-case.js
-      pre
-        code.javascript
-          include skeleton/js/app/title-case.js
 
     section
       h2 Camel Case

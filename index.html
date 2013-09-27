@@ -94,32 +94,24 @@ means braving the browser.</p>
       <section>
         <section><h2>Coding time</h2>
 
-<p>We&#39;re going to test two simple functions:</p>
-
-<ul><li>Title Case</li><li>Camel Case</li></ul>
+<p>We&#39;re going to <a href="http://en.wikipedia.org/wiki/CamelCase">camel case</a>
+strings!</p>
+          <p>"<strong>hi-there</strong>" &#10142; "<strong>hiThere</strong>"</p>
+        </section>
+        <section><h2>Set up your project</h2>
           <pre><code class="text no-highlight">
               # Copy the skeleton application.
               $ cp -r skeleton MY_APP_NAME</code></pre>
         </section>
         <section><h2>Project Structure</h2>
 
-<p>Start with the &quot;skeleton&quot; application.</p>
+<p>Using with the &quot;skeleton&quot; application.</p>
           <pre><code class="text no-highlight">
-              skeleton/
+              MY_APP_NAME/
                 js/
                   app/
-                    title-case.js
                     camel-case.js
                 camel.html</code></pre>
-        </section>
-        <section>
-          <h2>Title Case</h2><a href="skeleton/js/app/title-case.js">skeleton/js/app/title-case.js</a>
-          <pre><code class="javascript">// Title case a string.
-var titleCase = function (val) {
-  return val.charAt(0).toUpperCase() +
-         val.substr(1);
-};
-</code></pre>
         </section>
         <section>
           <h2>Camel Case</h2><a href="skeleton/js/app/camel-case.js">skeleton/js/app/camel-case.js</a>
