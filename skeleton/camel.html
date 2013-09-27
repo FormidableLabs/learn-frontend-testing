@@ -11,16 +11,14 @@
       };
     </script>
     <style>
-      body  { font-size: 4em; line-height: 0.2em; }
-      input { font-size: 1em; }
+      body  { text-align: center; line-height: 0.2em; }
     </style>
   </head>
   <body>
     <h2>Camel Case</h2>
     <p>Type in a string to camel case:</p>
-    <form action="#" onClick="return false;">
-      <input type="text" id="source"></input>
-      <input type="submit" value="Go!" onClick="camelize();"></input>
+    <form action="." onSubmit="camelize(); return false;">
+      <input type="text" id="source" size="35"></input>
     </form>
   </body>
 </html>
