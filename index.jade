@@ -88,18 +88,6 @@ block slides
     section
       p ... so let's get started with a modern frontend test stack.
 
-    section
-      h2 Sneaking ahead
-
-      a(href='https://github.com/FormidableLabs/learn-frontend-testing')
-        | github.com/FormidableLabs/learn-frontend-testing
-
-      //- git clone https://github.com/FormidableLabs/learn-frontend-testing.git
-      pre
-        code.text.no-highlight .
-          $ git clone https://github.com/FormidableLabs/
-                      learn-frontend-testing.git
-
   section
     section
       :markdown
@@ -140,6 +128,17 @@ block slides
       p "<strong>hi-there</strong>" &#10142; "<strong>hiThere</strong>"
 
     section
+      h2 Get the source
+      a(href='https://github.com/FormidableLabs/learn-frontend-testing')
+        | github.com/FormidableLabs/learn-frontend-testing
+
+      //- git clone https://github.com/FormidableLabs/learn-frontend-testing.git
+      pre
+        code.text.no-highlight .
+          $ git clone https://github.com/FormidableLabs/
+                      learn-frontend-testing.git
+
+    section
       :markdown
         ## Set up your project
 
@@ -165,11 +164,17 @@ block slides
       //-
 
     section
-      h2 Camel Case
-      a(href="skeleton/js/app/camel-case.js") skeleton/js/app/camel-case.js
+      //- h2 Camel Case
+      //- a(href="skeleton/js/app/camel-case.js") skeleton/js/app/camel-case.js
       pre
-        code.javascript
+        code
           include skeleton/js/app/camel-case.js
+      div
+        textarea(id="code", name="code", class="code",
+                 mode="javascript", runnable="true",
+                 style="display: none;")
+          include skeleton/js/app/camel-case.js
+      //-
 
     section
       h2 Demo

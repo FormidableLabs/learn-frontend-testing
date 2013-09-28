@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="css/reveal.min.css">
   <link id="theme" rel="stylesheet" href="css/theme/default.css">
   <link rel="stylesheet" href="lib/css/zenburn.css">
+  <link rel="stylesheet" href="lib/css/codemirror.css">
   <link rel="stylesheet" href="css/site.css">
   <script>document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );</script><!--[if lt IE 9]>
   <script src="lib/js/html5shiv.js"></script><![endif]-->
@@ -69,13 +70,6 @@ means braving the browser.</p>
         <section>
           <p>... so let's get started with a modern frontend test stack.</p>
         </section>
-        <section>
-          <h2>Sneaking ahead</h2><a href="https://github.com/FormidableLabs/learn-frontend-testing">github.com/FormidableLabs/learn-frontend-testing</a>
-          <pre><code class="text no-highlight">
-              $ git clone https://github.com/FormidableLabs/
-                          learn-frontend-testing.git
-                          </code></pre>
-        </section>
       </section>
       <section>
         <section><h2>Overview</h2>
@@ -98,6 +92,13 @@ means braving the browser.</p>
 strings!</p>
           <p>"<strong>hi-there</strong>" &#10142; "<strong>hiThere</strong>"</p>
         </section>
+        <section>
+          <h2>Get the source</h2><a href="https://github.com/FormidableLabs/learn-frontend-testing">github.com/FormidableLabs/learn-frontend-testing</a>
+          <pre><code class="text no-highlight">
+              $ git clone https://github.com/FormidableLabs/
+                          learn-frontend-testing.git
+                          </code></pre>
+        </section>
         <section><h2>Set up your project</h2>
           <pre><code class="text no-highlight">
               # Copy the skeleton application.
@@ -114,15 +115,23 @@ strings!</p>
                 camel.html</code></pre>
         </section>
         <section>
-          <h2>Camel Case</h2><a href="skeleton/js/app/camel-case.js">skeleton/js/app/camel-case.js</a>
-          <pre><code class="javascript">// Camel case a string.
+          <pre><code>// Camel case a string.
+var camelCase = function (val) {
+  // Uppercase the first character after a dash.
+  return val.replace(/-(.)/g, function (m, first) {
+    return first.toUpperCase();
+  });
+};</code></pre>
+          <div>
+            <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">// Camel case a string.
 var camelCase = function (val) {
   // Uppercase the first character after a dash.
   return val.replace(/-(.)/g, function (m, first) {
     return first.toUpperCase();
   });
 };
-</code></pre>
+            </textarea>
+          </div>
         </section>
         <section>
           <h2>Demo</h2><a href="skeleton/camel.html">skeleton/camel.html</a>
@@ -188,6 +197,7 @@ var camelCase = function (val) {
     </div>
   </div>
   <script src="lib/js/head.min.js"></script>
+  <script src="lib/js/codemirror.min.js"></script>
   <script src="js/reveal.min.js"></script>
   <script>
     (function (root) {
@@ -207,7 +217,7 @@ var camelCase = function (val) {
             grand = parent.parentNode,
             match;
             
-          // Strip initial empty line.
+          // Strip initial / trailing empty line.
           code.innerHTML = code.innerHTML.replace(/^\s*\n/m, "");
           
           // Find indent, if any.
@@ -250,6 +260,17 @@ var camelCase = function (val) {
           // { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
           // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
         ]
+      });
+      
+      // Preprocess CM
+      _toArray(document.querySelectorAll("textarea.code"))
+        .forEach(function (code) {
+          code.innerHTML = code.innerHTML.trim();
+        });
+        
+      // CodeMirror
+      CodeMirror.fromTextArea(document.getElementById("code"), {
+        mode:  "javascript"
       });
     }).call(this);
     

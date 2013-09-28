@@ -34,6 +34,8 @@ License.
 
 Tasks
 =====
+* Enable CM for runnable.
+* Style CM to look like rest of code.
 * Add `gh-pages` and hook up.
 * Do bitly links and retrofit throughout.
 * Libs: Upgrade and use bower.

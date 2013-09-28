@@ -135,3 +135,75 @@
   vertical-align: middle;
   width: 50%;
 }
+
+/* CodeMirror */
+div.CodeMirror {
+  font-family: monospace;
+  font-size: 0.8em;
+  line-height: 1em;
+  height: auto;
+}
+.CodeMirror pre {
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+      -ms-box-shadow: none;
+          box-shadow: none;
+}
+
+/* CM Highlighting -> Zenburn */
+.cm-s-default.CodeMirror {
+  display: block;
+  background: #3F3F3F;
+  color: #DCDCDC;
+
+  display: block;
+  position: relative;
+  width: 90%;
+  margin: 15px auto;
+
+  text-align: left;
+  font-family: monospace;
+  word-wrap: break-word;
+
+  box-shadow: 0px 0px 6px rgba(0,0,0,0.3);
+}
+
+.cm-s-default .cm-keyword     {color: #E3CEAB;}
+.cm-s-default .cm-atom        {color: #DCDCDC;}
+.cm-s-default .cm-number      {color: #DCDCDC;}
+.cm-s-default .cm-def         {color: #DCDCDC;}
+.cm-s-default .cm-variable    {color: #DCDCDC;}
+.cm-s-default .cm-variable-2  {color: #DCDCDC;}
+.cm-s-default .cm-variable-3  {color: #DCDCDC;}
+.cm-s-default .cm-property    {color: #DCDCDC;}
+.cm-s-default .cm-operator    {color: #DCDCDC;}
+.cm-s-default .cm-comment     {color: #7F9F7F;}
+.cm-s-default .cm-string      {color: #CC9393;}
+.cm-s-default .cm-string-2    {color: #DCDCDC;}
+.cm-s-default .cm-meta        {color: #DCDCDC;}
+.cm-s-default .cm-error       {color: #DCDCDC;}
+.cm-s-default .cm-qualifier   {color: #DCDCDC;}
+.cm-s-default .cm-builtin     {color: #DCDCDC;}
+.cm-s-default .cm-bracket     {color: #DCDCDC;}
+.cm-s-default .cm-tag         {color: #DCDCDC;}
+.cm-s-default .cm-attribute   {color: #DCDCDC;}
+.cm-s-default .cm-header      {color: #DCDCDC;}
+.cm-s-default .cm-quote       {color: #DCDCDC;}
+.cm-s-default .cm-hr          {color: #DCDCDC;}
+.cm-s-default .cm-link        {color: #DCDCDC;}
+
+.cm-negative {color: #d44;}
+.cm-positive {color: #292;}
+.cm-header, .cm-strong {font-weight: bold;}
+.cm-em {font-style: italic;}
+.cm-link {text-decoration: underline;}
+
+.cm-invalidchar {color: #f00;}
+
+div.CodeMirror span.CodeMirror-matchingbracket {color: #0f0;}
+div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #f22;}
+.CodeMirror-activeline-background {background: white;}
+
+.CodeMirror-selected { background: #ccc; }
+.CodeMirror-focused .CodeMirror-selected { background: #ccc; }
+
