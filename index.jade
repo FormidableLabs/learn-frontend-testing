@@ -131,13 +131,13 @@ block slides
 
   section
     section
-      :markdown
-        ## Coding time
+      h2 Coding time
 
-        We're going to [camel case](http://en.wikipedia.org/wiki/CamelCase)
-        strings!
-
-      p "<strong>hi-there</strong>" &#10142; "<strong>hiThere</strong>"
+      p We're going to say hello:
+      p "<strong>SeattleJS</strong>" &#10142; "<strong>Hello SeattleJS!</strong>"
+      ...
+      p And <a href="http://en.wikipedia.org/wiki/CamelCase">camel case</a> strings:
+      p "<strong>fun-test-time</strong>" &#10142; "<strong>funTestTime</strong>"
 
     section
       :markdown
@@ -160,9 +160,17 @@ block slides
           MY_APP_NAME/
             js/
               app/
+                hello.js
                 camel-case.js
-            camel.html
+            index.html
       //-
+
+    section
+      h2 Hello!
+      a(href="skeleton/js/app/hello.js") skeleton/js/app/hello.js
+      pre
+        code.javascript
+          include skeleton/js/app/hello.js
 
     section
       h2 Camel Case
@@ -173,11 +181,7 @@ block slides
 
     section
       h2 Demo
-      a(href="skeleton/camel.html") skeleton/camel.html
-      pre
-        code.text.no-highlight .
-          # Create the demo page.
-          $ vim camel.html
+      a(href="skeleton/index.html") skeleton/index.html
 
   section
     section
@@ -199,7 +203,7 @@ block slides
 
       pre
         code.text.no-highlight .
-          APP/
+          MY_APP_NAME/
             js/
               app/...
               lib/
@@ -208,10 +212,10 @@ block slides
                 mocha.css
                 sinon.js
               spec/
-                camel-case.spec.js
+                hello.spec.js
                 ...
             test.html
-            camel.html
+            index.html
       //-
 
     section
@@ -221,6 +225,12 @@ block slides
         Our first task is creating a page that will run our tests.
 
         [test/js/test.html](test/js/test.html)
+
+      pre
+        code.text.no-highlight .
+          $ cd MY_APP_NAME
+          $ touch test.html
+      //-
 
     section
       :markdown

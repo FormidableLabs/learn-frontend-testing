@@ -92,11 +92,12 @@ means braving the browser.</p>
         </section>
       </section>
       <section>
-        <section><h2>Coding time</h2>
-
-<p>We&#39;re going to <a href="http://en.wikipedia.org/wiki/CamelCase">camel case</a>
-strings!</p>
-          <p>"<strong>hi-there</strong>" &#10142; "<strong>hiThere</strong>"</p>
+        <section>
+          <h2>Coding time</h2>
+          <p>We're going to say hello:</p>
+          <p>"<strong>SeattleJS</strong>" &#10142; "<strong>Hello SeattleJS!</strong>"</p>...
+          <p>And <a href="http://en.wikipedia.org/wiki/CamelCase">camel case</a> strings:</p>
+          <p>"<strong>fun-test-time</strong>" &#10142; "<strong>funTestTime</strong>"</p>
         </section>
         <section><h2>Set up your project</h2>
           <pre><code class="text no-highlight">
@@ -110,8 +111,17 @@ strings!</p>
               MY_APP_NAME/
                 js/
                   app/
+                    hello.js
                     camel-case.js
-                camel.html</code></pre>
+                index.html</code></pre>
+        </section>
+        <section>
+          <h2>Hello!</h2><a href="skeleton/js/app/hello.js">skeleton/js/app/hello.js</a>
+          <pre><code class="javascript">// Hello [VALUE]!
+var hello = function (val) {
+  return "Hello " + val + "!";
+};
+</code></pre>
         </section>
         <section>
           <h2>Camel Case</h2><a href="skeleton/js/app/camel-case.js">skeleton/js/app/camel-case.js</a>
@@ -125,11 +135,7 @@ var camelCase = function (val) {
 </code></pre>
         </section>
         <section>
-          <h2>Demo</h2><a href="skeleton/camel.html">skeleton/camel.html</a>
-          <pre><code class="text no-highlight">
-              # Create the demo page.
-              $ vim camel.html
-              </code></pre>
+          <h2>Demo</h2><a href="skeleton/index.html">skeleton/index.html</a>
         </section>
       </section>
       <section>
@@ -144,7 +150,7 @@ var camelCase = function (val) {
 
 <p>A combined structure.</p>
           <pre><code class="text no-highlight">
-              APP/
+              MY_APP_NAME/
                 js/
                   app/...
                   lib/
@@ -153,16 +159,19 @@ var camelCase = function (val) {
                     mocha.css
                     sinon.js
                   spec/
-                    camel-case.spec.js
+                    hello.spec.js
                     ...
                 test.html
-                camel.html</code></pre>
+                index.html</code></pre>
         </section>
         <section><h2>The test page</h2>
 
 <p>Our first task is creating a page that will run our tests.</p>
 
 <p><a href="test/js/test.html">test/js/test.html</a></p>
+          <pre><code class="text no-highlight">
+              $ cd MY_APP_NAME
+              $ touch test.html</code></pre>
         </section>
         <section><h2>TODO - HERE - Get downloads and test.html going</h2>
         </section>

@@ -104,7 +104,7 @@ module.exports = function(grunt) {
       test: {
         files: [
           {
-            dest: "test/js/lib",
+            dest: "skeleton/js/lib",
             expand: true,
             flatten: true,
             src: [
@@ -114,7 +114,7 @@ module.exports = function(grunt) {
             ]
           },
           {
-            dest: "test/js/lib/sinon.js",
+            dest: "skeleton/js/lib/sinon.js",
             src: "bower_components/sinon/index.js"
           }
         ]
