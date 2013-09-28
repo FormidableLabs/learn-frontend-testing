@@ -4,6 +4,7 @@ module.exports = function(grunt) {
   // Project configuration
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+
     meta: {
       banner:
         '/*!\n' +
@@ -86,6 +87,27 @@ module.exports = function(grunt) {
       }
     },
 
+    copy: {
+      test: {
+        files: [
+          {
+            dest: "test/js/lib",
+            expand: true,
+            flatten: true,
+            src: [
+              "bower_components/mocha/mocha.js",
+              "bower_components/mocha/mocha.css",
+              "bower_components/chai/chai.js"
+            ]
+          },
+          {
+            dest: "test/js/lib/sinon.js",
+            src: "bower_components/sinon/index.js"
+          }
+        ]
+      }
+    },
+
     watch: {
       jade: {
         files: [
@@ -113,6 +135,7 @@ module.exports = function(grunt) {
   });
 
   // Dependencies
+  grunt.loadNpmTasks( 'grunt-contrib-copy' );
   grunt.loadNpmTasks( 'grunt-contrib-jshint' );
   grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
   grunt.loadNpmTasks( 'grunt-contrib-uglify' );

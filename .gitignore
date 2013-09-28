@@ -3,4 +3,5 @@
 log/*.log
 tmp/**
 node_modules/
+bower_components/
 .sass-cache
