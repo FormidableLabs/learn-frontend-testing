@@ -70,10 +70,23 @@ module.exports = function(grunt) {
         globals: {
           head: false,
           module: false,
-          console: false
+          console: false,
+
+          // Test.
+          it: false,
+          describe: false,
+          expect: false,
+
+          // Demo.
+          hello: true,
+          camelCase: true
         }
       },
-      files: [ 'Gruntfile.js', 'js/reveal.js' ]
+      files: [
+        "Gruntfile.js",
+        "test/js/app/**/*.js",
+        "test/js/spec/**/*.js"
+      ]
     },
 
     jade: {

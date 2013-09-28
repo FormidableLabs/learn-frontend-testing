@@ -7,6 +7,10 @@
     <!-- Mocha styles. -->
     <link rel="stylesheet" href="js/lib/mocha.css" />
 
+    <!-- Application libraries. -->
+    <script src="js/app/hello.js"></script>
+    <script src="js/app/camel-case.js"></script>
+
     <!-- Test libraries. -->
     <script src="js/lib/mocha.js"></script>
     <script src="js/lib/chai.js"></script>
@@ -14,18 +18,18 @@
 
     <!-- Test Setup -->
     <script>
-      // Setup.
-      var expect = chai.expect;
+      // Set up Chai and Mocha.
+      window.expect = chai.expect;
       mocha.setup("bdd");
 
-      // Run tests on window load event.
+      // Run tests on window load.
       window.onload = function () {
         mocha.run();
       };
     </script>
 
     <!-- Tests. -->
-    <script src="js/spec/title-case.spec.js"></script>
+    <script src="js/spec/hello.spec.js"></script>
   </head>
   <body>
     <div id="mocha"></div>
