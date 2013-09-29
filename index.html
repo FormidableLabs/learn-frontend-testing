@@ -256,7 +256,7 @@ describe("top-level", function () {
 
 <p>The <a href="http://chaijs.com/api/bdd/">&quot;bdd&quot; API</a>:</p>
 
-<ul><li><strong>Chains</strong>: <code>to</code>, <code>be</code>, <code>been</code>, <code>have</code></li><li><strong>Groups</strong>: <code>and</code></li><li><strong>Basics</strong>: <code>a</code>, <code>equal</code>, <code>length</code></li></ul>
+<ul><li><strong>Chains</strong>: <code>to</code>, <code>be</code>, <code>been</code>, <code>have</code></li><li><strong>Groups</strong>: <code>and</code></li><li><strong>Basics</strong>: <code>a</code>, <code>equal</code>, <code>length</code>, <code>match</code></li></ul>
         </section>
         <section><h2>Hello!</h2>
 
@@ -266,7 +266,9 @@ describe("top-level", function () {
   it("should say hello", function () {
     expect(hello("World"))
       .to.be.a("string").and
-      .to.equal("Hello World!");
+      .to.equal("Hello World!").and
+      .to.have.length(12).and
+      .to.match(/He[l]{2}/);
   });
 });
 </code></pre>
