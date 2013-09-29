@@ -20,10 +20,13 @@
       
       // Run tests on window load.
       window.onload = function () {
-        mocha.run();
+        (window.mochaPhantomJS || mocha).run();
       };
     </script>
     <!-- Tests.-->
+    <script src="js/spec/mocha-suite.spec.js"></script>
+    <script src="js/spec/mocha-setup.spec.js"></script>
+    <script src="js/spec/chai.spec.js"></script>
     <script src="js/spec/hello.spec.js"></script>
     <script src="js/spec/camel.spec.js"></script>
   </head>

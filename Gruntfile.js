@@ -94,7 +94,7 @@ module.exports = function(grunt) {
     },
 
     mocha_phantomjs: {
-      all: ["example/test-all.html"]
+      all: ["example/test.html"]
     },
 
     jade: {
@@ -109,7 +109,6 @@ module.exports = function(grunt) {
           "example/test-chai.html":   ["_templates/example/test-chai.jade"],
           "example/test-hello.html":  ["_templates/example/test-hello.jade"],
           "example/test-camel.html":  ["_templates/example/test-camel.jade"],
-          "example/test-all.html":    ["_templates/example/test-all.jade"],
           "example/test.html":        ["_templates/example/test.jade"]
         }
       }
