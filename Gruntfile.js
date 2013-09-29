@@ -83,7 +83,7 @@ module.exports = function(grunt) {
 
           // Demo.
           hello: true,
-          camelCase: true
+          camel: true
         }
       },
       files: [
@@ -104,6 +104,7 @@ module.exports = function(grunt) {
           "example/test-mocha.html":  ["_templates/example/test-mocha.jade"],
           "example/test-chai.html":   ["_templates/example/test-chai.jade"],
           "example/test-hello.html":  ["_templates/example/test-hello.jade"],
+          "example/test-camel.html":  ["_templates/example/test-camel.jade"],
           "example/test.html":        ["_templates/example/test.jade"]
         }
       }

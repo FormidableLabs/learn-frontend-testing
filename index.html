@@ -113,7 +113,7 @@ means braving the browser.</p>
                 js/
                   app/
                     hello.js
-                    camel-case.js
+                    camel.js
                   lib/
                     chai.js
                     mocha.js
@@ -130,9 +130,9 @@ var hello = function (val) {
 </code></pre>
         </section>
         <section>
-          <h2>Camel Case</h2><a href="skeleton/js/app/camel-case.js">skeleton/js/app/camel-case.js</a>
+          <h2>Camel Case</h2><a href="skeleton/js/app/camel.js">skeleton/js/app/camel.js</a>
           <pre><code class="javascript">// Camel case a string.
-var camelCase = function (val) {
+var camel = function (val) {
   // Uppercase the first character after a dash.
   return val.replace(/-(.)/g, function (m, first) {
     return first.toUpperCase();
@@ -179,7 +179,7 @@ var camelCase = function (val) {
     &lt;title&gt;Frontend Testing&lt;/title&gt;
     &lt;!-- Application libraries. --&gt;
     &lt;script src=&quot;js/app/hello.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;js/app/camel-case.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;js/app/camel.js&quot;&gt;&lt;/script&gt;
     &lt;!-- Test styles and libraries. --&gt;
     &lt;link rel=&quot;stylesheet&quot;
           href=&quot;js/lib/mocha.css&quot; /&gt;
@@ -227,7 +227,7 @@ describe("top-level", function () {
   describe("nested", function () {
     it("is slow and async", function (done) {
       setTimeout(function () { done(); }, 300);
-    })
+    });
   });
 });</code></pre>
         </section>
@@ -254,7 +254,7 @@ describe("top-level", function () {
         </section>
         <section><h2>Chai API</h2>
 
-<p>The <a href="http://chaijs.com/api/bdd/">Chai BDD API</a>:</p>
+<p>The <a href="http://chaijs.com/api/bdd/">&quot;bdd&quot; API</a>:</p>
 
 <ul><li><strong>Chains</strong>: <code>to</code>, <code>be</code>, <code>been</code>, <code>have</code></li><li><strong>Groups</strong>: <code>and</code></li><li><strong>Basics</strong>: <code>a</code>, <code>equal</code>, <code>length</code></li></ul>
         </section>
@@ -287,13 +287,32 @@ describe("top-level", function () {
 });
 </code></pre>
         </section>
+        <section><h2>Camel Case</h2>
+
+<p><a href="example/test-camel.html">test-camel.html</a> |
+<a href="example/js/spec/camel.spec.js">camel.spec.js</a></p>
+          <pre><code class="javascript">describe("camel", function () {
+  it("handles base cases", function () {
+    expect(camel("")).to.equal("");
+    expect(camel("single")).to.equal("single");
+  });
+});
+</code></pre>
+        </section>
       </section>
       <section>
-        <section>
-          <h2>Sinon.JS Fakes</h2>
+        <section><h2>Sinon.JS Fakes</h2>
+
+<p>Dependencies, complexities? Fake it!</p>
+
+<ul><li><a href="http://sinonjs.org/docs/#spies"><strong>Spies</strong></a>: <em>Observe</em> function behavior.</li><li><a href="http://sinonjs.org/docs/#stubs"><strong>Stubs</strong></a>: <em>Spies</em> that <em>replace</em> behavior.</li><li><a href="http://sinonjs.org/docs/#server"><strong>Fake Server</strong></a>: Override <code>$.ajax</code>, etc.</li></ul>
         </section>
-        <section><h2>TODO</h2>
+        <section><h2>TODO - SPY ON CAMEL CASE</h2>
         </section>
+        <section><h2>TODO - STUB ON CAMEL CASE</h2>
+        </section>
+      </section>
+      <section><h2>TODO - ALL TESTS / PHANTOM</h2>
       </section>
       <section><h2>What we&#39;ve covered</h2>
 

@@ -161,7 +161,7 @@ block slides
             js/
               app/
                 hello.js
-                camel-case.js
+                camel.js
               lib/
                 chai.js
                 mocha.js
@@ -179,10 +179,10 @@ block slides
 
     section
       h2 Camel Case
-      a(href="skeleton/js/app/camel-case.js") skeleton/js/app/camel-case.js
+      a(href="skeleton/js/app/camel.js") skeleton/js/app/camel.js
       pre
         code.javascript
-          include ../skeleton/js/app/camel-case.js
+          include ../skeleton/js/app/camel.js
 
     section
       h2 Demo
@@ -242,7 +242,7 @@ block slides
             <title>Frontend Testing</title>
             <!-- Application libraries. -->
             <script src="js/app/hello.js"></script>
-            <script src="js/app/camel-case.js"></script>
+            <script src="js/app/camel.js"></script>
             <!-- Test styles and libraries. -->
             <link rel="stylesheet"
                   href="js/lib/mocha.css" />
@@ -328,7 +328,7 @@ block slides
       :markdown
         ## Chai API
 
-        The [Chai BDD API](http://chaijs.com/api/bdd/):
+        The ["bdd" API](http://chaijs.com/api/bdd/):
 
         * **Chains**: `to`, `be`, `been`, `have`
         * **Groups**: `and`
@@ -356,13 +356,39 @@ block slides
         code.javascript
           include ../example/js/spec/chai.spec.js
 
+    section
+      :markdown
+        ## Camel Case
+
+        [test-camel.html](example/test-camel.html) |
+        [camel.spec.js](example/js/spec/camel.spec.js)
+
+      pre
+        code.javascript
+          include ../example/js/spec/camel.spec.js
+
   section
     section
-      h2 Sinon.JS Fakes
+      :markdown
+        ## Sinon.JS Fakes
+
+        Dependencies, complexities? Fake it!
+
+        * [**Spies**](http://sinonjs.org/docs/#spies): *Observe* function behavior.
+        * [**Stubs**](http://sinonjs.org/docs/#stubs): *Spies* that *replace* behavior.
+        * [**Fake Server**](http://sinonjs.org/docs/#server): Override `$.ajax`, etc.
 
     section
       :markdown
-        ## TODO
+        ## TODO - SPY ON CAMEL CASE
+
+    section
+      :markdown
+        ## TODO - STUB ON CAMEL CASE
+
+  section
+    :markdown
+      ## TODO - ALL TESTS / PHANTOM
 
   section
     :markdown
