@@ -95,8 +95,9 @@ module.exports = function(grunt) {
           pretty: true
         },
         files: {
-          "index.html":         ["_templates/index.jade"],
-          "example/test.html":  ["_templates/test.jade"]
+          "index.html":               ["_templates/index.jade"],
+          "example/test-empty.html":  ["_templates/example/test-layout.jade"],
+          "example/test.html":        ["_templates/example/test.jade"]
         }
       }
     },
