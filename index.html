@@ -225,8 +225,9 @@ var camelCase = function (val) {
 
 describe("top-level", function () {
   describe("nested", function () {
-    it("should be awesome");
-    it("should be correct");
+    it("is slow and async", function (done) {
+      setTimeout(function () { done(); }, 300);
+    })
   });
 });</code></pre>
         </section>
@@ -253,6 +254,8 @@ describe("top-level", function () {
         </section>
         <section><h2>Chai API</h2>
 
+<p>The <a href="http://chaijs.com/api/bdd/">Chai BDD API</a>:</p>
+
 <ul><li><strong>Chains</strong>: <code>to</code>, <code>be</code>, <code>been</code>, <code>have</code></li><li><strong>Groups</strong>: <code>and</code></li><li><strong>Basics</strong>: <code>a</code>, <code>equal</code>, <code>length</code></li></ul>
         </section>
         <section><h2>Hello!</h2>
@@ -264,6 +267,17 @@ describe("top-level", function () {
     expect(hello("World"))
       .to.be.a("string").and
       .to.equal("Hello World!");
+  });
+});
+</code></pre>
+        </section>
+        <section><h2>More Chai</h2>
+
+<p><a href="example/test-chai.html">test-chai.html</a> |
+<a href="example/js/spec/chai.spec.js">chai.spec.js</a></p>
+          <pre><code class="javascript">describe("chai", function () {
+  it("fails", function () {
+    expect("one").to.equal("two");
   });
 });
 </code></pre>

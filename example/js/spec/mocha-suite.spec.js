@@ -4,7 +4,8 @@ describe("single level", function () {
 
 describe("top-level", function () {
   describe("nested", function () {
-    it("should be awesome");
-    it("should be correct");
+    it("is slow and async", function (done) {
+      setTimeout(function () { done(); }, 300);
+    })
   });
 });
