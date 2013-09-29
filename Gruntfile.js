@@ -95,7 +95,8 @@ module.exports = function(grunt) {
           pretty: true
         },
         files: {
-          "index.html": ["index.jade"]
+          "index.html":         ["_templates/index.jade"],
+          "example/test.html":  ["_templates/test.jade"]
         }
       }
     },
@@ -124,8 +125,7 @@ module.exports = function(grunt) {
     watch: {
       jade: {
         files: [
-          "*.jade",
-          "test/**"
+          "_templates/**/*.jade"
         ],
         tasks: [
           "jade"
