@@ -84,8 +84,8 @@ module.exports = function(grunt) {
       },
       files: [
         "Gruntfile.js",
-        "test/js/app/**/*.js",
-        "test/js/spec/**/*.js"
+        "example/js/app/**/*.js",
+        "example/js/spec/**/*.js"
       ]
     },
 
@@ -97,6 +97,7 @@ module.exports = function(grunt) {
         files: {
           "index.html":               ["_templates/index.jade"],
           "example/test-empty.html":  ["_templates/example/test-layout.jade"],
+          "example/test-mocha.html":  ["_templates/example/test-mocha.jade"],
           "example/test.html":        ["_templates/example/test.jade"]
         }
       }

@@ -171,9 +171,7 @@ var camelCase = function (val) {
 <p>Create a test &quot;driver&quot; web page.</p>
 
 <p><a href="example/test.html">example/test.html</a></p>
-          <pre><code class="text no-highlight">
-              $ cd MY_APP_NAME
-              $ touch test.html</code></pre>
+          <pre><code class="text no-highlight">$ touch MY_APP_NAME/test.html</code></pre>
         </section>
         <section><h2>test.html</h2>
           <pre class="html">&lt;html&gt;
@@ -216,7 +214,20 @@ var camelCase = function (val) {
         <section>
           <h2>Mocha Suites, Specs</h2>
         </section>
-        <section><h2>TODO</h2>
+        <section><h2>Suites and Specs</h2>
+
+<p><a href="example/test-mocha.html">test-mocha.html</a> |
+<a href="example/js/spec/mocha.spec.js">mocha.spec.js</a></p>
+          <pre><code class="javascript">describe("a topic", function () {
+  it("should test something");
+});
+
+describe("top-level", function () {
+  describe("nested", function () {
+    it("should be awesome");
+    it("should be correct");
+  });
+});</code></pre>
         </section>
       </section>
       <section>

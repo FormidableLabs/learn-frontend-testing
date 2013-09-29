@@ -229,8 +229,7 @@ block slides
 
       pre
         code.text.no-highlight .
-          $ cd MY_APP_NAME
-          $ touch test.html
+          $ touch MY_APP_NAME/test.html
       //-
 
     section
@@ -293,7 +292,14 @@ block slides
 
     section
       :markdown
-        ## TODO
+        ## Suites and Specs
+
+        [test-mocha.html](example/test-mocha.html) |
+        [mocha.spec.js](example/js/spec/mocha.spec.js)
+
+      pre
+        code.javascript
+          include ../example/js/spec/mocha.spec.js
 
   section
     section
