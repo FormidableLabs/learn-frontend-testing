@@ -127,7 +127,8 @@ module.exports = function(grunt) {
     watch: {
       jade: {
         files: [
-          "_templates/**/*.jade"
+          "_templates/**/*.jade",
+          "example/**/*.js"
         ],
         tasks: [
           "jade"
