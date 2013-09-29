@@ -72,6 +72,9 @@ module.exports = function(grunt) {
           module: false,
           console: false,
 
+          // Libs.
+          sinon: false,
+
           // Test.
           it: false,
           describe: false,
@@ -107,6 +110,7 @@ module.exports = function(grunt) {
           "example/test-empty.html":  ["_templates/example/test-layout.jade"],
           "example/test-mocha.html":  ["_templates/example/test-mocha.jade"],
           "example/test-chai.html":   ["_templates/example/test-chai.jade"],
+          "example/test-sinon.html":  ["_templates/example/test-sinon.jade"],
           "example/test-hello.html":  ["_templates/example/test-hello.jade"],
           "example/test-camel.html":  ["_templates/example/test-camel.jade"],
           "example/test.html":        ["_templates/example/test.jade"]

@@ -282,6 +282,10 @@ describe("top-level", function () {
     expect(camel("")).to.equal("");
     expect(camel("single")).to.equal("single");
   });
+  it("handles dashed cases", function () {
+    expect(camel("a-b-c")).to.equal("aBC");
+    expect(camel("one-two")).to.equal("oneTwo");
+  });
 });
 </code></pre>
         </section>
@@ -312,9 +316,42 @@ describe("chai", function () {
 
 <ul><li><a href="http://sinonjs.org/docs/#spies"><strong>Spies</strong></a>: <em>Observe</em> function behavior.</li><li><a href="http://sinonjs.org/docs/#stubs"><strong>Stubs</strong></a>: <em>Spies</em> that <em>replace</em> behavior.</li><li><a href="http://sinonjs.org/docs/#server"><strong>Fake Server</strong></a>: Override <code>$.ajax</code>, etc.</li></ul>
         </section>
-        <section><h2>TODO - SPY ON CAMEL CASE</h2>
+        <section><h2>Sinon.JS <a href="http://sinonjs.org/docs/#spies">Spy</a></h2>
+
+<p><a href="example/test-sinon.html">test-sinon.html</a> |
+<a href="example/js/spec/camel-spy.spec.js">camel-spy.spec.js</a> |
+<a href="example/js/app/camel.js">camel.js</a></p>
+          <pre><code class="javascript">describe("camel", function () {
+  it("spies lower case", function () {
+    var spy = sinon.spy(String.prototype, "toUpperCase");
+
+    expect(spy.callCount).to.equal(0);
+    expect(camel("a-b")).to.equal("aB");
+    expect(spy.callCount).to.equal(1);
+    expect(spy.firstCall.returnValue).to.equal("B");
+
+    spy.restore();
+  });
+});
+</code></pre>
         </section>
-        <section><h2>TODO - STUB ON CAMEL CASE</h2>
+        <section><h2>Sinon.JS <a href="http://sinonjs.org/docs/#stubs">Stub</a></h2>
+
+<p><a href="example/test-sinon.html">test-sinon.html</a> |
+<a href="example/js/spec/camel-stub.spec.js">camel-stub.spec.js</a> |
+<a href="example/js/app/camel.js">camel.js</a></p>
+          <pre><code class="javascript">describe("camel", function () {
+  it("stubs lower case", function () {
+    var stub = sinon.stub(String.prototype, "toUpperCase",
+      function () { return "FOO"; });
+
+    expect(camel("a-b")).to.equal("aFOO");
+    expect(stub.callCount).to.equal(1);
+
+    stub.restore();
+  });
+});
+</code></pre>
         </section>
       </section>
       <section>
