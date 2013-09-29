@@ -93,6 +93,10 @@ module.exports = function(grunt) {
       ]
     },
 
+    mocha_phantomjs: {
+      all: ["example/test-all.html"]
+    },
+
     jade: {
       compile: {
         options: {
@@ -105,6 +109,7 @@ module.exports = function(grunt) {
           "example/test-chai.html":   ["_templates/example/test-chai.jade"],
           "example/test-hello.html":  ["_templates/example/test-hello.jade"],
           "example/test-camel.html":  ["_templates/example/test-camel.jade"],
+          "example/test-all.html":    ["_templates/example/test-all.jade"],
           "example/test.html":        ["_templates/example/test.jade"]
         }
       }
@@ -160,6 +165,7 @@ module.exports = function(grunt) {
   // Dependencies
   grunt.loadNpmTasks( 'grunt-contrib-copy' );
   grunt.loadNpmTasks( 'grunt-contrib-jshint' );
+  grunt.loadNpmTasks( 'grunt-mocha-phantomjs' );
   grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
   grunt.loadNpmTasks( 'grunt-contrib-uglify' );
   grunt.loadNpmTasks( 'grunt-contrib-watch' );
@@ -167,7 +173,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks( 'grunt-contrib-jade' );
 
   // Default task
-  grunt.registerTask( 'default', [ 'jshint', 'cssmin', 'uglify' ] );
+  grunt.registerTask( 'default', [ 'jshint', 'mocha_phantomjs' ] );
 
   // Theme task
   grunt.registerTask( 'themes', [ 'sass' ] );

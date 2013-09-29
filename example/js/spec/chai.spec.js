@@ -4,7 +4,4 @@ describe("chai", function () {
     expect({foo: {bar: 12}})
       .to.have.deep.property("foo.bar", 12);
   });
-  it("fails", function () {
-    expect("one").to.equal("two");
-  });
 });
