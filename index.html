@@ -70,7 +70,7 @@ means braving the browser.</p>
           <p>... so let's get started with a modern frontend test stack.</p>
         </section>
         <section>
-          <h2>Sneaking ahead</h2><a href="https://github.com/FormidableLabs/learn-frontend-testing">github.com/FormidableLabs/learn-frontend-testing</a>
+          <h2>Get the code</h2><a href="https://github.com/FormidableLabs/learn-frontend-testing">github.com/FormidableLabs/learn-frontend-testing</a>
           <pre><code class="text no-highlight">
               $ git clone https://github.com/FormidableLabs/
                           learn-frontend-testing.git
@@ -95,7 +95,8 @@ means braving the browser.</p>
         <section>
           <h2>Coding time</h2>
           <p>We're going to say hello:</p>
-          <p>"<strong>SeattleJS</strong>" &#10142; "<strong>Hello SeattleJS!</strong>"</p>...
+          <p>"<strong>SeattleJS</strong>" &#10142; "<strong>Hello SeattleJS!</strong>"</p>
+          <hr width="50%">
           <p>And <a href="http://en.wikipedia.org/wiki/CamelCase">camel case</a> strings:</p>
           <p>"<strong>fun-test-time</strong>" &#10142; "<strong>funTestTime</strong>"</p>
         </section>
@@ -113,6 +114,11 @@ means braving the browser.</p>
                   app/
                     hello.js
                     camel-case.js
+                  lib/
+                    chai.js
+                    mocha.js
+                    mocha.css
+                    sinon.js
                 index.html</code></pre>
         </section>
         <section>
@@ -144,7 +150,7 @@ var camelCase = function (val) {
         </section>
         <section><h2>Test Libraries</h2>
 
-<ul><li><strong><a href="http://visionmedia.github.com/mocha/">Mocha</a></strong>: Framework</li><li><strong><a href="http://chaijs.com/">Chai</a></strong>: Assertions</li><li><strong><a href="http://sinonjs.org/">Sinon.JS</a></strong>: Fakes - spies and stubs</li></ul>
+<ul><li><strong><a href="http://visionmedia.github.com/mocha/">Mocha</a></strong> (<code>v1.13.0</code>): Framework</li><li><strong><a href="http://chaijs.com/">Chai</a></strong> (<code>v1.7.3</code>): Assertions</li><li><strong><a href="http://sinonjs.org/">Sinon.JS</a></strong> (<code>v1.8.0</code>): Fakes - spies and stubs</li></ul>
         </section>
         <section><h2>Directory layout</h2>
 
@@ -152,28 +158,58 @@ var camelCase = function (val) {
           <pre><code class="text no-highlight">
               MY_APP_NAME/
                 js/
-                  app/...
+                  app/
                   lib/
-                    chai.js
-                    mocha.js
-                    mocha.css
-                    sinon.js
                   spec/
                     hello.spec.js
-                    ...
+                    *.spec.js
                 test.html
                 index.html</code></pre>
         </section>
         <section><h2>The test page</h2>
 
-<p>Our first task is creating a page that will run our tests.</p>
+<p>Create a test &quot;driver&quot; web page.</p>
 
-<p><a href="test/js/test.html">test/js/test.html</a></p>
+<p><a href="example/js/test.html">example/js/test.html</a></p>
           <pre><code class="text no-highlight">
               $ cd MY_APP_NAME
               $ touch test.html</code></pre>
         </section>
-        <section><h2>TODO - HERE - Get downloads and test.html going</h2>
+        <section><h2>test.html</h2>
+          <pre class="html">&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Frontend Testing&lt;/title&gt;
+    &lt;!-- Application libraries. --&gt;
+    &lt;script src=&quot;js/app/hello.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;js/app/camel-case.js&quot;&gt;&lt;/script&gt;
+    &lt;!-- Test styles and libraries. --&gt;
+    &lt;link rel=&quot;stylesheet&quot;
+          href=&quot;js/lib/mocha.css&quot; /&gt;
+    &lt;script src=&quot;js/lib/mocha.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;js/lib/chai.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;js/lib/sinon.js&quot;&gt;&lt;/script&gt;</pre>
+        </section>
+        <section><h2>test.html</h2>
+          <pre class="html no-indent">&nbsp;   &lt;!-- Test Setup --&gt;
+    &lt;script&gt;
+      // Set up Chai and Mocha.
+      window.expect = chai.expect;
+      mocha.setup(&quot;bdd&quot;);
+      
+      // Run tests on window load.
+      window.onload = function () {
+        mocha.run();
+      };
+    &lt;/script&gt;</pre>
+        </section>
+        <section><h2>test.html</h2>
+          <pre class="html no-indent">&nbsp;   &lt;!-- Tests. --&gt;
+    &lt;script src=&quot;js/spec/hello.spec.js&quot;&gt;&lt;/script&gt;
+&nbsp; &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id=&quot;mocha&quot;&gt;&lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
         </section>
       </section>
       <section><h2>What we&#39;ve covered</h2>
@@ -204,6 +240,16 @@ var camelCase = function (val) {
         return Array.prototype.slice.call(obj);
       };
       
+      // Escape HTML code.
+      var _escapeHtml = function () {
+        _toArray(document.querySelectorAll("pre.html"))
+          .forEach(function (code) {
+            code.innerHTML = "<code class='html'>" + code.innerHTML + "</code>";
+          });
+      };
+      
+      _escapeHtml();
+      
       // Highlight source code.
       //
       // Extended wrapper for bringing in markdown.
@@ -217,7 +263,7 @@ var camelCase = function (val) {
             match;
             
           // Strip initial empty line.
-          code.innerHTML = code.innerHTML.replace(/^\s*\n/m, "");
+          code.innerHTML = code.innerHTML.replace(/^\s*\n/, "");
           
           // Find indent, if any.
           match = /^(\s+)/.exec(code.innerHTML);
@@ -229,11 +275,6 @@ var camelCase = function (val) {
             code.innerHTML = code.innerHTML
               .split("\n" + match[0])
               .join("\n");
-          }
-          
-          // Wrap in <pre> tag if not already present.
-          if (parent.nodeName.toLowerCase() !== "pre") {
-            parent.innerHTML = "<pre>" + code.outerHTML + "</pre>";
           }
         });
         
@@ -261,7 +302,5 @@ var camelCase = function (val) {
         ]
       });
     }).call(this);
-    
-    
   </script>
 </body>

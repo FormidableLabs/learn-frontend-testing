@@ -36,9 +36,7 @@ Tasks
 =====
 * Add `gh-pages` and hook up.
 * Do bitly links and retrofit throughout.
-* Libs: Upgrade and use bower.
 * Create a "formidable" theme based on default with red's for links and hovers.
-* Hone down the overrides in site.css.
 * Search on all TODO information (urls, etc.).
 * Remove this section.
 

@@ -89,7 +89,7 @@ block slides
       p ... so let's get started with a modern frontend test stack.
 
     section
-      h2 Sneaking ahead
+      h2 Get the code
 
       a(href='https://github.com/FormidableLabs/learn-frontend-testing')
         | github.com/FormidableLabs/learn-frontend-testing
@@ -135,7 +135,7 @@ block slides
 
       p We're going to say hello:
       p "<strong>SeattleJS</strong>" &#10142; "<strong>Hello SeattleJS!</strong>"
-      ...
+      hr(width="50%")
       p And <a href="http://en.wikipedia.org/wiki/CamelCase">camel case</a> strings:
       p "<strong>fun-test-time</strong>" &#10142; "<strong>funTestTime</strong>"
 
@@ -162,6 +162,11 @@ block slides
               app/
                 hello.js
                 camel-case.js
+              lib/
+                chai.js
+                mocha.js
+                mocha.css
+                sinon.js
             index.html
       //-
 
@@ -191,9 +196,9 @@ block slides
       :markdown
         ## Test Libraries
 
-        * **[Mocha](http://visionmedia.github.com/mocha/)**: Framework
-        * **[Chai](http://chaijs.com/)**: Assertions
-        * **[Sinon.JS](http://sinonjs.org/)**: Fakes - spies and stubs
+        * **[Mocha](http://visionmedia.github.com/mocha/)** (`v1.13.0`): Framework
+        * **[Chai](http://chaijs.com/)** (`v1.7.3`): Assertions
+        * **[Sinon.JS](http://sinonjs.org/)** (`v1.8.0`): Fakes - spies and stubs
 
     section
       :markdown
@@ -205,15 +210,11 @@ block slides
         code.text.no-highlight .
           MY_APP_NAME/
             js/
-              app/...
+              app/
               lib/
-                chai.js
-                mocha.js
-                mocha.css
-                sinon.js
               spec/
                 hello.spec.js
-                ...
+                *.spec.js
             test.html
             index.html
       //-
@@ -222,9 +223,9 @@ block slides
       :markdown
         ## The test page
 
-        Our first task is creating a page that will run our tests.
+        Create a test "driver" web page.
 
-        [test/js/test.html](test/js/test.html)
+        [example/js/test.html](example/js/test.html)
 
       pre
         code.text.no-highlight .
@@ -234,7 +235,54 @@ block slides
 
     section
       :markdown
-        ## TODO - HERE - Get downloads and test.html going
+        ## test.html
+
+      pre.html .
+        <html>
+          <head>
+            <title>Frontend Testing</title>
+            <!-- Application libraries. -->
+            <script src="js/app/hello.js"></script>
+            <script src="js/app/camel-case.js"></script>
+            <!-- Test styles and libraries. -->
+            <link rel="stylesheet"
+                  href="js/lib/mocha.css" />
+            <script src="js/lib/mocha.js"></script>
+            <script src="js/lib/chai.js"></script>
+            <script src="js/lib/sinon.js"></script>
+      //-
+
+    section
+      :markdown
+        ## test.html
+
+      pre.html.no-indent .
+        &nbsp;   <!-- Test Setup -->
+            <script>
+              // Set up Chai and Mocha.
+              window.expect = chai.expect;
+              mocha.setup("bdd");
+
+              // Run tests on window load.
+              window.onload = function () {
+                mocha.run();
+              };
+            </script>
+      //-
+
+    section
+      :markdown
+        ## test.html
+
+      pre.html.no-indent .
+        &nbsp;   <!-- Tests. -->
+            <script src="js/spec/hello.spec.js"></script>
+        &nbsp; &lt;/head>
+          <body>
+            <div id="mocha"></div>
+          </body>
+        </html>
+      //-
 
   section
     :markdown

@@ -32,6 +32,16 @@ head
           return Array.prototype.slice.call(obj);
         };
 
+        // Escape HTML code.
+        var _escapeHtml = function () {
+          _toArray(document.querySelectorAll("pre.html"))
+            .forEach(function (code) {
+              code.innerHTML = "<code class='html'>" + code.innerHTML + "</code>";
+            });
+        };
+
+        _escapeHtml();
+
         // Highlight source code.
         //
         // Extended wrapper for bringing in markdown.
@@ -45,7 +55,7 @@ head
               match;
 
             // Strip initial empty line.
-            code.innerHTML = code.innerHTML.replace(/^\s*\n/m, "");
+            code.innerHTML = code.innerHTML.replace(/^\s*\n/, "");
 
             // Find indent, if any.
             match = /^(\s+)/.exec(code.innerHTML);
@@ -57,11 +67,6 @@ head
               code.innerHTML = code.innerHTML
                 .split("\n" + match[0])
                 .join("\n");
-            }
-
-            // Wrap in <pre> tag if not already present.
-            if (parent.nodeName.toLowerCase() !== "pre") {
-              parent.innerHTML = "<pre>" + code.outerHTML + "</pre>";
             }
           });
 
@@ -89,5 +94,3 @@ head
           ]
         });
       }).call(this);
-
-
