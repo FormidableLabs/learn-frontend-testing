@@ -80,7 +80,7 @@ means braving the browser.</p>
       <section>
         <section><h2>Overview</h2>
 
-<ul><li>Some code to work with</li><li>Installation and test page</li><li>Suites</li><li>Assertions</li><li>Fakes</li></ul>
+<ul><li>Installation and test page</li><li>Suites</li><li>Assertions</li><li>Fakes</li><li>Automation</li></ul>
         </section>
         <section><h2>We will learn how to</h2>
 
@@ -315,15 +315,41 @@ describe("chai", function () {
         <section><h2>TODO - STUB ON CAMEL CASE</h2>
         </section>
       </section>
-      <section><h2>TODO - ALL TESTS / PHANTOM</h2>
-      </section>
-      <section><h2>What we&#39;ve covered</h2>
+      <section>
+        <section><h2>Automation</h2>
 
-<ul><li>Test harness</li><li>Suites, specs</li><li>Assertions</li><li>Fakes</li></ul>
-      </section>
-      <section><h2>Additional Topics</h2>
+<p>Drive our frontend tests with
+<a href="http://phantomjs.org/"><strong>PhantomJS</strong></a> using
+<a href="https://github.com/metaskills/mocha-phantomjs"><strong>Mocha-PhantomJS</strong></a></p>
+        </section>
+        <section><h2>Prep test.html</h2>
 
-<ul><li>Automation</li><li>TDD / BDD</li><li>Functional testing</li><li>Performance testing</li></ul>
+<p>Update the <a href="example/test.html">test.html</a> file:</p>
+          <pre><code class="javascript">
+              window.onload = function () {
+                (window.mochaPhantomJS || mocha).run();
+              };</code></pre>
+        </section>
+        <section><h2>Headless!</h2>
+
+<p>Install and drive <a href="example/test.html">tests</a> from the command line:</p>
+          <pre><code class="text no-highlight">
+              $ npm install mocha-phantomjs
+              $ node_modules/.bin/mocha-phantomjs \
+                MY_APP_NAME/test.html</code></pre>
+        </section>
+        <section><p>... and that&#39;s all for now!</p>
+        </section>
+      </section>
+      <section>
+        <section><h2>What we&#39;ve covered</h2>
+
+<ul><li>Test harness</li><li>Suites, specs</li><li>Assertions</li><li>Fakes</li><li>Automation</li></ul>
+        </section>
+        <section><h2>Additional Topics</h2>
+
+<ul><li>Continuous Integration</li><li>TDD / BDD</li><li>Functional testing</li><li>Performance testing</li></ul>
+        </section>
       </section>
       <section>
         <h1>Thanks!</h1>

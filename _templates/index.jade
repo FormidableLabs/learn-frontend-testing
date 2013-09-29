@@ -105,11 +105,11 @@ block slides
       :markdown
         ## Overview
 
-        * Some code to work with
         * Installation and test page
         * Suites
         * Assertions
         * Fakes
+        * Automation
 
     section
       :markdown
@@ -389,26 +389,63 @@ block slides
         ## TODO - STUB ON CAMEL CASE
 
   section
-    :markdown
-      ## TODO - ALL TESTS / PHANTOM
+    section
+      :markdown
+        ## Automation
+
+        Drive our frontend tests with
+        [**PhantomJS**](http://phantomjs.org/) using
+        [**Mocha-PhantomJS**](https://github.com/metaskills/mocha-phantomjs)
+
+    section
+      :markdown
+        ## Prep test.html
+
+        Update the [test.html](example/test.html) file:
+
+      pre
+        code.javascript .
+          window.onload = function () {
+            (window.mochaPhantomJS || mocha).run();
+          };
+      //-
+
+    section
+      :markdown
+        ## Headless!
+
+        Install and drive [tests](example/test.html) from the command line:
+
+      pre
+        code.text.no-highlight .
+          $ npm install mocha-phantomjs
+          $ node_modules/.bin/mocha-phantomjs \
+            MY_APP_NAME/test.html
+      //-
+
+    section
+      :markdown
+        ... and that's all for now!
 
   section
-    :markdown
-      ## What we've covered
+    section
+      :markdown
+        ## What we've covered
 
-      * Test harness
-      * Suites, specs
-      * Assertions
-      * Fakes
+        * Test harness
+        * Suites, specs
+        * Assertions
+        * Fakes
+        * Automation
 
-  section
-    :markdown
-      ## Additional Topics
+    section
+      :markdown
+        ## Additional Topics
 
-      * Automation
-      * TDD / BDD
-      * Functional testing
-      * Performance testing
+        * Continuous Integration
+        * TDD / BDD
+        * Functional testing
+        * Performance testing
 
   section
     h1 Thanks!
