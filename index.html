@@ -251,7 +251,22 @@ describe("top-level", function () {
 
 <ul><li>Natural language syntax.</li><li>Chained assertions.</li></ul>
         </section>
-        <section><h2>TODO</h2>
+        <section><h2>Chai API</h2>
+
+<ul><li><strong>Chains</strong>: <code>to</code>, <code>be</code>, <code>been</code>, <code>have</code></li><li><strong>Groups</strong>: <code>and</code></li><li><strong>Basics</strong>: <code>a</code>, <code>equal</code>, <code>length</code></li></ul>
+        </section>
+        <section><h2>Hello!</h2>
+
+<p><a href="example/test-hello.html">test-hello.html</a> |
+<a href="example/js/spec/hello.spec.js">hello.spec.js</a></p>
+          <pre><code class="javascript">describe("hello", function () {
+  it("should say hello", function () {
+    expect(hello("World"))
+      .to.be.a("string").and
+      .to.equal("Hello World!");
+  });
+});
+</code></pre>
         </section>
       </section>
       <section>
