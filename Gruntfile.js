@@ -76,6 +76,10 @@ module.exports = function(grunt) {
           it: false,
           describe: false,
           expect: false,
+          before: false,
+          beforeEach: false,
+          after: false,
+          afterEach: false,
 
           // Demo.
           hello: true,

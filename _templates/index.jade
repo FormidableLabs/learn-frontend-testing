@@ -190,7 +190,7 @@ block slides
 
   section
     section
-      h2 Our test harness
+      h2 Test harness
 
     section
       :markdown
@@ -288,22 +288,41 @@ block slides
 
   section
     section
-      h2 Mocha Suites, Specs
+      :markdown
+        ## Mocha Suites, Specs
+
+        * **Spec**: A **test**.
+        * **Suite**: A collection of **specs** or **suites**.
 
     section
       :markdown
-        ## Suites and Specs
+        ## Suites, Specs
 
         [test-mocha.html](example/test-mocha.html) |
-        [mocha.spec.js](example/js/spec/mocha.spec.js)
+        [mocha-suite.spec.js](example/js/spec/mocha-suite.spec.js)
 
       pre
         code.javascript
-          include ../example/js/spec/mocha.spec.js
+          include ../example/js/spec/mocha-suite.spec.js
+
+    section
+      :markdown
+        ## Setup, Teardown
+
+        [test-mocha.html](example/test-mocha.html) |
+        [mocha-setup.spec.js](example/js/spec/mocha-setup.spec.js)
+
+      pre
+        code.javascript
+          include ../example/js/spec/mocha-setup.spec.js
 
   section
     section
-      h2 Chai Assertions
+      :markdown
+        ## Chai Assertions
+
+        * Natural language syntax.
+        * Chained assertions.
 
     section
       :markdown

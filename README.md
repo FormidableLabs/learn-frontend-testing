@@ -23,17 +23,16 @@ To watch changes:
 
 Licenses
 ========
-All code not otherwise specified is Copyright 2013 Ryan Roemer.
-Released under the MIT License.
+This project contains many libraries distributed under their respective
+licenses.
 
-[reveal.js][reveal] is Copyright Hakim El Hattab and released under the MIT
-License.
-
-[reveal]: http://lab.hakim.se/reveal-js
-
+All code not otherwise specified is Copyright 2013 Ryan Roemer and
+released under the MIT License.
 
 Tasks
 =====
+* GH banner
+* Re-enable pager.
 * Add `gh-pages` and hook up.
 * Do bitly links and retrofit throughout.
 * Create a "formidable" theme based on default with red's for links and hovers.

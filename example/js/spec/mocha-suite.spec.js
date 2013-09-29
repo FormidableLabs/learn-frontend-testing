@@ -1,4 +1,4 @@
-describe("a topic", function () {
+describe("single level", function () {
   it("should test something");
 });
 

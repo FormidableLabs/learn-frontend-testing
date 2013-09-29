@@ -146,7 +146,7 @@ var camelCase = function (val) {
       </section>
       <section>
         <section>
-          <h2>Our test harness</h2>
+          <h2>Test harness</h2>
         </section>
         <section><h2>Test Libraries</h2>
 
@@ -211,14 +211,15 @@ var camelCase = function (val) {
         </section>
       </section>
       <section>
-        <section>
-          <h2>Mocha Suites, Specs</h2>
+        <section><h2>Mocha Suites, Specs</h2>
+
+<ul><li><strong>Spec</strong>: A <strong>test</strong>.</li><li><strong>Suite</strong>: A collection of <strong>specs</strong> or <strong>suites</strong>.</li></ul>
         </section>
-        <section><h2>Suites and Specs</h2>
+        <section><h2>Suites, Specs</h2>
 
 <p><a href="example/test-mocha.html">test-mocha.html</a> |
-<a href="example/js/spec/mocha.spec.js">mocha.spec.js</a></p>
-          <pre><code class="javascript">describe("a topic", function () {
+<a href="example/js/spec/mocha-suite.spec.js">mocha-suite.spec.js</a></p>
+          <pre><code class="javascript">describe("single level", function () {
   it("should test something");
 });
 
@@ -229,10 +230,26 @@ describe("top-level", function () {
   });
 });</code></pre>
         </section>
+        <section><h2>Setup, Teardown</h2>
+
+<p><a href="example/test-mocha.html">test-mocha.html</a> |
+<a href="example/js/spec/mocha-setup.spec.js">mocha-setup.spec.js</a></p>
+          <pre><code class="javascript">describe("setup/teardown", function () {
+  before(function () {});
+  beforeEach(function () {});
+
+  after(function () {});
+  afterEach(function () {});
+
+  it("should test something");
+});
+</code></pre>
+        </section>
       </section>
       <section>
-        <section>
-          <h2>Chai Assertions</h2>
+        <section><h2>Chai Assertions</h2>
+
+<ul><li>Natural language syntax.</li><li>Chained assertions.</li></ul>
         </section>
         <section><h2>TODO</h2>
         </section>
@@ -318,7 +335,7 @@ describe("top-level", function () {
       // Full list of configuration options available here:
       // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
-        controls: true,
+        controls: false,
         progress: true,
         history: true,
         center: true,
