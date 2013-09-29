@@ -31,11 +31,10 @@ released under the MIT License.
 
 Tasks
 =====
+* Add `gh-pages` and hook up.
+* Create a "formidable" theme based on default with red's for links and hovers.
+
 * GH banner
 * Re-enable pager.
-* Add `gh-pages` and hook up.
-* Do bitly links and retrofit throughout.
-* Create a "formidable" theme based on default with red's for links and hovers.
-* Search on all TODO information (urls, etc.).
 * Remove this section.
 

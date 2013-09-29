@@ -89,6 +89,20 @@
       border-top-radius: 10px;
   background-color: #e7ad52;
 }
+.reveal section div.last-links {
+  line-height: 1.4em;
+  padding: 5px;
+  width: 50%;
+
+  margin-top: 30px;
+  margin-right: auto;
+  margin-left: auto;
+
+  border: 3px solid #ccc;
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
+}
 
 .reveal table {
   margin-top: 40px;
