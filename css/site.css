@@ -30,7 +30,7 @@
 .reveal h3 {
   font-size: 2.25em;
 }
-.reveal #title h3 {
+.reveal .title h3 {
   padding-top: 20px;
   padding-bottom: 20px;
 }
