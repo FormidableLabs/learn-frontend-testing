@@ -36,7 +36,6 @@ released under the MIT License.
 Tasks
 =====
 * Add `gh-pages` and hook up.
-* Add travis.
 * Create a "formidable" theme based on default with red's for links and hovers.
 
 * GH banner
