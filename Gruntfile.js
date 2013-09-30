@@ -153,33 +153,32 @@ module.exports = function(grunt) {
           spawn: false,
           atBegin: true
         }
+      },
+      theme: {
+        files: [
+          "css/theme/source/*.scss",
+          "css/theme/template/*.scss"
+        ],
+        tasks: "themes"
       }
-      // main: {
-      //   files: [ 'Gruntfile.js', 'js/reveal.js', 'css/reveal.css' ],
-      //   tasks: 'default'
-      // },
-      // theme: {
-      //   files: [ 'css/theme/source/*.scss', 'css/theme/template/*.scss' ],
-      //   tasks: 'themes'
-      // }
     }
 
   });
 
   // Dependencies
-  grunt.loadNpmTasks( 'grunt-contrib-copy' );
-  grunt.loadNpmTasks( 'grunt-contrib-jshint' );
-  grunt.loadNpmTasks( 'grunt-mocha-phantomjs' );
-  grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
-  grunt.loadNpmTasks( 'grunt-contrib-uglify' );
-  grunt.loadNpmTasks( 'grunt-contrib-watch' );
-  grunt.loadNpmTasks( 'grunt-contrib-sass' );
-  grunt.loadNpmTasks( 'grunt-contrib-jade' );
+  grunt.loadNpmTasks("grunt-contrib-copy");
+  grunt.loadNpmTasks("grunt-contrib-jshint");
+  grunt.loadNpmTasks("grunt-mocha-phantomjs");
+  grunt.loadNpmTasks("grunt-contrib-cssmin");
+  grunt.loadNpmTasks("grunt-contrib-uglify");
+  grunt.loadNpmTasks("grunt-contrib-watch");
+  grunt.loadNpmTasks("grunt-contrib-sass");
+  grunt.loadNpmTasks("grunt-contrib-jade");
 
   // Default task
-  grunt.registerTask( 'default', [ 'jshint', 'mocha_phantomjs' ] );
+  grunt.registerTask( "default", [ "jshint", "mocha_phantomjs" ] );
 
   // Theme task
-  grunt.registerTask( 'themes', [ 'sass' ] );
+  grunt.registerTask( "themes", [ "sass" ] );
 
 };
