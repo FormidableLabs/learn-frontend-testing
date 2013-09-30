@@ -43,6 +43,7 @@ module.exports = function(grunt) {
       main: {
         files: {
           'css/theme/default.css': 'css/theme/source/default.scss',
+          'css/theme/formidable.css': 'css/theme/source/formidable.scss',
           'css/theme/beige.css': 'css/theme/source/beige.scss',
           'css/theme/night.css': 'css/theme/source/night.scss',
           'css/theme/serif.css': 'css/theme/source/serif.scss',
