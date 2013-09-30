@@ -7,6 +7,14 @@
 @import "../template/mixins";
 @import "../template/settings";
 
+// Links and actions
+$linkColor: #FF766B;
+$linkColorHover: #E7BDB0;
+
+.reveal strong {
+  color: #E7BDB0;
+}
+
 // Include theme-specific fonts
 @font-face {
   font-family: 'League Gothic';
