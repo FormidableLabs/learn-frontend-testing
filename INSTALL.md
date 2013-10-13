@@ -2,7 +2,8 @@ Installation
 ============
 
 The code sources for the 10/16/2013 [SeattleJS][seattlejs]
-talk, "[Learn Frontend Testing][meetup]".
+talk, "[Learn Frontend Testing][meetup]", are contained in this repository,
+which you will need for the workshop.
 
 To check out the code using git:
 
