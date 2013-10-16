@@ -114,6 +114,7 @@ module.exports = function(grunt) {
           "example/test-sinon.html":  ["_templates/example/test-sinon.jade"],
           "example/test-hello.html":  ["_templates/example/test-hello.jade"],
           "example/test-camel.html":  ["_templates/example/test-camel.jade"],
+          "example/test-sandbox.html": ["_templates/example/test-sandbox.jade"],
           "example/test.html":        ["_templates/example/test.jade"]
         }
       }
