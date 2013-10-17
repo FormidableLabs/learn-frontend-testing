@@ -1,5 +1,5 @@
 describe("camel", function () {
-  it("spies lower case", function () {
+  it("spies upper case", function () {
     var spy = sinon.spy(String.prototype, "toUpperCase");
 
     expect(spy.callCount).to.equal(0);

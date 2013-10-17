@@ -1,5 +1,5 @@
 describe("camel", function () {
-  it("stubs lower case", function () {
+  it("stubs upper case", function () {
     var stub = sinon.stub(String.prototype, "toUpperCase",
       function () { return "FOO"; });
 

@@ -328,7 +328,7 @@ describe("chai", function () {
 <a href="example/js/spec/camel-spy.spec.js">camel-spy.spec.js</a> |
 <a href="example/js/app/camel.js">camel.js</a></p>
           <pre><code class="javascript">describe("camel", function () {
-  it("spies lower case", function () {
+  it("spies upper case", function () {
     var spy = sinon.spy(String.prototype, "toUpperCase");
 
     expect(spy.callCount).to.equal(0);
@@ -347,7 +347,7 @@ describe("chai", function () {
 <a href="example/js/spec/camel-stub.spec.js">camel-stub.spec.js</a> |
 <a href="example/js/app/camel.js">camel.js</a></p>
           <pre><code class="javascript">describe("camel", function () {
-  it("stubs lower case", function () {
+  it("stubs upper case", function () {
     var stub = sinon.stub(String.prototype, "toUpperCase",
       function () { return "FOO"; });
 
@@ -405,25 +405,6 @@ describe("chai", function () {
           <div class="next"><a href="https://github.com/FormidableLabs/learn-frontend-testing">bit.ly/frontend-testing-src</a></div>
           <div><a href="http://backbone-testing.com">backbone-testing.com</a></div>
         </div>
-      </section>
-      <section id="banner" class="title">
-        <h1>Frontend Testing</h1>
-        <p><a href="http://loose-bits.com">Ryan Roemer</a> |&nbsp;<a href="http://twitter.com/FormidableLabs">@FormidableLabs</a> |&nbsp;<a href="http://www.meetup.com/seattlejs/">Seattle JS</a></p><br>
-        <p>Get the source: &nbsp;<a href="https://github.com/FormidableLabs/learn-frontend-testing">bit.ly/frontend-testing-src</a></p>
-        <pre><code class="text no-highlight">
-            $ git clone https://github.com/FormidableLabs/
-                        learn-frontend-testing.git</code></pre>
-      </section>
-      <section id="sandbox"><h2>Sandbox!</h2>
-
-<p><a href="example/test-sandbox.html">test-sandbox.html</a> |
-<a href="example/js/app/sandbox.js">sandbox.js</a></p>
-        <pre><code class="javascript">describe("sandbox", function () {
-  it("goes to eleven", function () {
-    expect(11).to.equal(11);
-  });
-});
-</code></pre>
       </section>
     </div>
   </div>
